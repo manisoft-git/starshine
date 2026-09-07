@@ -17,6 +17,9 @@
 </head>
 <body>
 
+  <!-- Ambient Golden Cursor Spotlight (Tracks cursor on desktop) -->
+  <div class="cursor-spotlight"></div>
+
   <!-- Ambient Glow Elements -->
   <div class="ambient-glow-top"></div>
   <div class="ambient-glow-mid"></div>
@@ -30,7 +33,7 @@
         <span class="ticker-sparkle">✦</span>
       </div>
       <div class="top-bar-right">
-        <a id="topConciergeLink" class="concierge-link" href="#" target="_blank">
+        <a id="topConciergeLink" class="concierge-link" href="javascript:void(0)" onclick="openConciergeHub()">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
           </svg>
@@ -70,6 +73,7 @@
           <li><a href="#catalogSection" class="nav-link" onclick="filterByCategory('shoes')">Footwear</a></li>
           <li><a href="#catalogSection" class="nav-link" onclick="filterByCategory('clothes')">Apparel</a></li>
           <li><a href="#catalogSection" class="nav-link" onclick="filterByCategory('accessories')">Accessories</a></li>
+          <li><a href="#capsules" class="nav-link">Capsules</a></li>
           <li><a href="#story" class="nav-link">The Atelier</a></li>
         </ul>
       </nav>
@@ -85,8 +89,16 @@
 
       <!-- Header Actions -->
       <div class="header-actions">
-        <!-- Search Trigger -->
-        <button class="action-btn" onclick="scrollToCatalog(); document.getElementById('catalogSearch').focus();" title="Search Collection" aria-label="Search">
+        <!-- Mechanical Sound Toggle -->
+        <button id="audioToggleIcon" class="action-btn" onclick="toggleAudio()" title="Toggle Watch-Tick Audio Feedback" aria-label="Audio Feedback">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+        </button>
+
+        <!-- Search Trigger (Opens Full Screen Search Overlay) -->
+        <button class="action-btn" onclick="openSearchOverlay()" title="Search Collection (Press /)" aria-label="Search">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
@@ -138,7 +150,7 @@
       </h1>
 
       <p class="hero-description">
-        Curated Swiss-inspired horology, handcrafted Italian leather footwear, bespoke tailored suits, and distinguished accessories crafted for life’s grandest moments.
+        Curated Swiss-inspired horology, handcrafted Italian leather footwear, bespoke tailored garments, and distinguished accessories crafted for life’s grandest moments.
       </p>
 
       <div class="hero-buttons">
@@ -150,11 +162,11 @@
           </svg>
         </button>
 
-        <a class="btn-whatsapp-outline" href="javascript:void(0)" onclick="openCartDrawer()">
+        <a class="btn-whatsapp-outline" href="javascript:void(0)" onclick="openConciergeHub()">
           <svg width="20" height="20" viewBox="0 0 24 24">
             <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c4.56 0 8.25 3.69 8.25 8.24 0 2.2-.86 4.28-2.42 5.83a8.216 8.216 0 0 1-5.83 2.42c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.39c0-4.55 3.7-8.24 8.25-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8 2.53 1.09 2.53.73 2.99.69.45-.05 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.12-.22-.19-.47-.31z"/>
           </svg>
-          <span>View Bag & Order</span>
+          <span>WhatsApp VIP Hub</span>
         </a>
       </div>
 
@@ -181,8 +193,27 @@
     </div>
   </section>
 
-  <!-- Department Showcase Section (4 Categories) -->
-  <section id="categories" class="container" style="padding-top: 60px;">
+  <!-- Infinite Luxury Marquee Ribbon -->
+  <div class="marquee-ribbon">
+    <div class="marquee-track">
+      <div class="marquee-item"><span class="gold-star">✦</span> SWISS CHRONOMETRIC PRECISION</div>
+      <div class="marquee-item"><span class="gold-star">✦</span> HAND-BURNISHED TUSCAN CALFSKIN</div>
+      <div class="marquee-item"><span class="gold-star">✦</span> 1-CLICK WHATSAPP VIP ORDERING</div>
+      <div class="marquee-item"><span class="gold-star">✦</span> SUPER 130S ITALIAN VIRGIN WOOL</div>
+      <div class="marquee-item"><span class="gold-star">✦</span> 24K CHAMPAGNE GOLD MONOGRAMS</div>
+      <div class="marquee-item"><span class="gold-star">✦</span> COMPLIMENTARY INSURED GLOBAL DELIVERY</div>
+      <!-- Duplicate for seamless infinite loop -->
+      <div class="marquee-item"><span class="gold-star">✦</span> SWISS CHRONOMETRIC PRECISION</div>
+      <div class="marquee-item"><span class="gold-star">✦</span> HAND-BURNISHED TUSCAN CALFSKIN</div>
+      <div class="marquee-item"><span class="gold-star">✦</span> 1-CLICK WHATSAPP VIP ORDERING</div>
+      <div class="marquee-item"><span class="gold-star">✦</span> SUPER 130S ITALIAN VIRGIN WOOL</div>
+      <div class="marquee-item"><span class="gold-star">✦</span> 24K CHAMPAGNE GOLD MONOGRAMS</div>
+      <div class="marquee-item"><span class="gold-star">✦</span> COMPLIMENTARY INSURED GLOBAL DELIVERY</div>
+    </div>
+  </div>
+
+  <!-- Department Showcase Section (4 Portals) -->
+  <section id="categories" class="container" style="padding-top: 70px;">
     <div class="section-header">
       <span class="section-pretitle">The Departments</span>
       <h2 class="section-title">Curated For Excellence</h2>
@@ -261,7 +292,7 @@
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <input id="catalogSearch" class="search-input" type="text" placeholder="Search shoes, watches, shirts..." />
+          <input id="catalogSearch" class="search-input" type="text" placeholder="Search shoes, watches, shirts... (Press /)" />
         </div>
 
         <select id="catalogSort" class="sort-select" aria-label="Sort Collection">
@@ -276,6 +307,202 @@
     <!-- Product Grid -->
     <div id="productsGrid" class="products-grid">
       <!-- Injected by JavaScript -->
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CURATED CAPSULES / COMPLETE THE LOOK (BUNDLE & SAVE 15%)
+       ========================================================================== -->
+  <section id="capsules" class="capsules-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pretitle">The Capsule Edits</span>
+        <h2 class="section-title">Complete The Look</h2>
+        <p class="section-subtitle">
+          Masterfully coordinated ensembles curated by our head stylists. Add the entire capsule with 1-click and receive an automated <strong>15% VIP Ensemble Discount</strong>.
+        </p>
+      </div>
+
+      <div class="capsules-grid">
+        <!-- Capsule 1: Black-Tie Gala -->
+        <article class="capsule-card">
+          <div class="capsule-header-banner">
+            <span class="capsule-badge">15% Bundle Savings</span>
+            <img class="capsule-banner-img" src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80" alt="The Black-Tie Gala" />
+          </div>
+          <div class="capsule-body">
+            <span class="capsule-subtitle">Bespoke Evening Grandeur</span>
+            <h3 class="capsule-title">The Black-Tie Gala</h3>
+            <p class="capsule-desc">
+              The quintessential formal statement pairing pure Italian wool, open-heart flying tourbillon horology, and hand-burnished calfskin.
+            </p>
+
+            <ul class="capsule-items-list">
+              <li class="capsule-item-row">
+                <span class="capsule-item-name">⌚ Celestial Flying Tourbillon</span>
+                <span class="capsule-item-price">$590</span>
+              </li>
+              <li class="capsule-item-row">
+                <span class="capsule-item-name">👔 Venetian Tailored Wool Blazer</span>
+                <span class="capsule-item-price">$360</span>
+              </li>
+              <li class="capsule-item-row">
+                <span class="capsule-item-name">👞 Milano Handcrafted Oxford Shoes</span>
+                <span class="capsule-item-price">$280</span>
+              </li>
+              <li class="capsule-item-row">
+                <span class="capsule-item-name">💎 Sterling Silver & Onyx Cufflinks</span>
+                <span class="capsule-item-price">$85</span>
+              </li>
+            </ul>
+
+            <div class="capsule-pricing-box">
+              <span class="capsule-total-label">Ensemble Value:</span>
+              <div class="capsule-prices">
+                <span class="capsule-regular-price">$1,315</span>
+                <span class="capsule-bundle-price">$1,117</span>
+              </div>
+            </div>
+
+            <button class="btn-add-capsule" onclick="addCapsuleToCart('capsule-gala')">
+              <span>Add Complete Look (Save 15%)</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Capsule 2: The Riviera Connoisseur -->
+        <article class="capsule-card">
+          <div class="capsule-header-banner">
+            <span class="capsule-badge">Most Coveted</span>
+            <img class="capsule-banner-img" src="https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=900&q=80" alt="The Riviera Connoisseur" />
+          </div>
+          <div class="capsule-body">
+            <span class="capsule-subtitle">Effortless Mediterranean Luxury</span>
+            <h3 class="capsule-title">The Riviera Connoisseur</h3>
+            <p class="capsule-desc">
+              Sun-drenched sophistication crafted with water-resistant suede loafers, ceramic chronograph, and 24K gold aviators.
+            </p>
+
+            <ul class="capsule-items-list">
+              <li class="capsule-item-row">
+                <span class="capsule-item-name">⌚ Monaco Chronograph Midnight</span>
+                <span class="capsule-item-price">$350</span>
+              </li>
+              <li class="capsule-item-row">
+                <span class="capsule-item-name">👞 Montecristo Tassel Suede Loafers</span>
+                <span class="capsule-item-price">$230</span>
+              </li>
+              <li class="capsule-item-row">
+                <span class="capsule-item-name">👔 Giza Silk-Cotton Evening Shirt</span>
+                <span class="capsule-item-price">$145</span>
+              </li>
+              <li class="capsule-item-row">
+                <span class="capsule-item-name">🕶️ Aviation 24K Gold Aviators</span>
+                <span class="capsule-item-price">$175</span>
+              </li>
+            </ul>
+
+            <div class="capsule-pricing-box">
+              <span class="capsule-total-label">Ensemble Value:</span>
+              <div class="capsule-prices">
+                <span class="capsule-regular-price">$900</span>
+                <span class="capsule-bundle-price">$765</span>
+              </div>
+            </div>
+
+            <button class="btn-add-capsule" onclick="addCapsuleToCart('capsule-riviera')">
+              <span>Add Complete Look (Save 15%)</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Capsule 3: The Wall Street Minimalist -->
+        <article class="capsule-card">
+          <div class="capsule-header-banner">
+            <span class="capsule-badge">Editorial Choice</span>
+            <img class="capsule-banner-img" src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=900&q=80" alt="The Wall Street Minimalist" />
+          </div>
+          <div class="capsule-body">
+            <span class="capsule-subtitle">Contemporary Modern Poise</span>
+            <h3 class="capsule-title">The Wall Street Minimalist</h3>
+            <p class="capsule-desc">
+              Sleek low-profile court sneakers, Mongolian pure cashmere knitwear, and ultra-thin black diamond horology.
+            </p>
+
+            <ul class="capsule-items-list">
+              <li class="capsule-item-row">
+                <span class="capsule-item-name">⌚ Astral Minimalist Black Diamond</span>
+                <span class="capsule-item-price">$270</span>
+              </li>
+              <li class="capsule-item-row">
+                <span class="capsule-item-name">👞 Aura Luxury Nappa Court Sneaker</span>
+                <span class="capsule-item-price">$210</span>
+              </li>
+              <li class="capsule-item-row">
+                <span class="capsule-item-name">👔 Mongolian Pure Cashmere Knit</span>
+                <span class="capsule-item-price">$195</span>
+              </li>
+              <li class="capsule-item-row">
+                <span class="capsule-item-name">🕶️ Starshine 24K Monogram Belt</span>
+                <span class="capsule-item-price">$120</span>
+              </li>
+            </ul>
+
+            <div class="capsule-pricing-box">
+              <span class="capsule-total-label">Ensemble Value:</span>
+              <div class="capsule-prices">
+                <span class="capsule-regular-price">$795</span>
+                <span class="capsule-bundle-price">$675</span>
+              </div>
+            </div>
+
+            <button class="btn-add-capsule" onclick="addCapsuleToCart('capsule-urban')">
+              <span>Add Complete Look (Save 15%)</span>
+            </button>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lookbook Client Editorial Gallery -->
+  <section class="lookbook-gallery-section container">
+    <div class="section-header">
+      <span class="section-pretitle">The Global Lookbook</span>
+      <h2 class="section-title">Worn By The Connoisseurs</h2>
+      <p class="section-subtitle">A glimpse into how our global clientele styles Starshine horology, footwear, and tailored garments.</p>
+    </div>
+
+    <div class="lookbook-grid">
+      <div class="lookbook-item">
+        <img class="lookbook-img" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=700&q=80" alt="Client Look" />
+        <div class="lookbook-hover-tag">
+          <div class="lookbook-tag-title">Milan Men's Fashion Week</div>
+          <div class="lookbook-tag-sub">Styled with Venetian Blazer & Chronograph</div>
+        </div>
+      </div>
+      <div class="lookbook-item">
+        <img class="lookbook-img" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=700&q=80" alt="Client Look" />
+        <div class="lookbook-hover-tag">
+          <div class="lookbook-tag-title">St. Moritz Private Lounge</div>
+          <div class="lookbook-tag-sub">Featuring Mongolian Cashmere & Tourbillon</div>
+        </div>
+      </div>
+      <div class="lookbook-item">
+        <img class="lookbook-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80" alt="Client Look" />
+        <div class="lookbook-hover-tag">
+          <div class="lookbook-tag-title">Monaco Yacht Club</div>
+          <div class="lookbook-tag-sub">Montecristo Suede Loafers & Aviators</div>
+        </div>
+      </div>
+      <div class="lookbook-item">
+        <img class="lookbook-img" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80" alt="Client Look" />
+        <div class="lookbook-hover-tag">
+          <div class="lookbook-tag-title">Mayfair Executive Gala</div>
+          <div class="lookbook-tag-sub">Blake-Welted Oxford Shoes & Double-Breasted Trench</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -344,7 +571,12 @@
           </div>
         </div>
 
-        <button class="btn-gold" onclick="scrollToCatalog()">Explore the Atelier</button>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <button class="btn-gold" onclick="scrollToCatalog()">Explore the Atelier</button>
+          <button class="btn-whatsapp-outline" onclick="openSizeGuide('shoes')">
+            📏 Sizing & Fit Advisor
+          </button>
+        </div>
       </div>
 
     </div>
@@ -527,9 +759,9 @@
           <ul class="footer-links">
             <li><a href="javascript:void(0)" onclick="openCartDrawer()">WhatsApp Quick Checkout</a></li>
             <li><a href="javascript:void(0)" onclick="openWishlistModal()">Personal Wishlist</a></li>
+            <li><a href="javascript:void(0)" onclick="openSizeGuide('shoes')">Sizing & Measurements</a></li>
+            <li><a href="javascript:void(0)" onclick="openConciergeHub()">VIP Concierge Chat</a></li>
             <li><a href="javascript:void(0)" onclick="openSettingsModal()">Owner Store Settings</a></li>
-            <li><a href="#story">Authenticity Verification</a></li>
-            <li><a href="#story">Sizing & Fitting Guide</a></li>
           </ul>
         </div>
 
@@ -613,6 +845,12 @@
         <!-- Optional City / Customer Note -->
         <input id="cartDeliveryNote" class="cart-note-input" type="text" placeholder="Your City / Specific Delivery Instructions (Optional)" />
 
+        <!-- Gift Packaging Checkbox -->
+        <div style="margin-bottom: 14px; font-size: 0.78rem; color: var(--gold-light); display: flex; align-items: center; gap: 8px;">
+          <input type="checkbox" id="cartGiftBox" style="accent-color: var(--gold-primary);" checked />
+          <label for="cartGiftBox">Complimentary Velvet Gift Box & Handwritten Card</label>
+        </div>
+
         <!-- Totals Breakdown -->
         <div class="cart-summary-line">
           <span>Subtotal</span>
@@ -639,6 +877,11 @@
           <span>Complete Order On WhatsApp</span>
         </button>
 
+        <!-- Printable Invoice Trigger -->
+        <button class="btn-whatsapp-outline" style="width: 100%; justify-content: center; margin-top: 10px; font-size: 0.8rem; padding: 11px;" onclick="openInvoiceModal()">
+          🖨️ View & Print Luxury Invoice
+        </button>
+
         <div class="cart-security-badge">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
@@ -646,6 +889,42 @@
           </svg>
           <span>Direct Encrypted Concierge Communication</span>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FULL SCREEN LUXURY SEARCH OVERLAY
+       ========================================================================== -->
+  <div id="searchOverlay" class="search-overlay">
+    <div class="search-overlay-container">
+      <div class="search-overlay-header">
+        <div class="search-overlay-title">Discover The Collection</div>
+        <button class="btn-close-drawer" onclick="closeSearchOverlay()">✕</button>
+      </div>
+
+      <div class="search-overlay-input-wrap">
+        <svg class="search-overlay-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input id="overlaySearchInput" class="search-overlay-input" type="text" placeholder="Search by name, category, leather, movement..." oninput="renderOverlaySearchResults(this.value)" />
+      </div>
+
+      <!-- Trending Quick Search Tags -->
+      <div class="search-tags-row">
+        <span class="search-tag-label">Trending:</span>
+        <button class="search-tag" onclick="searchTagClick('Tourbillon')">Tourbillon Watch</button>
+        <button class="search-tag" onclick="searchTagClick('Oxford')">Calfskin Oxfords</button>
+        <button class="search-tag" onclick="searchTagClick('Blazer')">Tailored Blazer</button>
+        <button class="search-tag" onclick="searchTagClick('Cashmere')">Cashmere Knit</button>
+        <button class="search-tag" onclick="searchTagClick('Belt')">24K Monogram Belt</button>
+        <button class="search-tag" onclick="searchTagClick('Aviators')">Titanium Aviators</button>
+      </div>
+
+      <!-- Instant Results Grid -->
+      <div id="searchOverlayResults" class="search-results-grid">
+        <!-- Results injected by JavaScript -->
       </div>
     </div>
   </div>
@@ -694,7 +973,12 @@
 
           <!-- Size Selector -->
           <div class="selector-group">
-            <span class="selector-label">Select Dimension / Size:</span>
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <span class="selector-label">Select Dimension / Size:</span>
+              <a href="javascript:void(0)" onclick="openSizeGuide('shoes')" style="font-size: 0.74rem; color: var(--gold-primary); text-decoration: underline;">
+                Size & Fit Guide
+              </a>
+            </div>
             <div id="modalSizeOptions" class="size-options">
               <!-- Size buttons -->
             </div>
@@ -720,6 +1004,107 @@
           </div>
 
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SIZE & FIT GUIDE MODAL
+       ========================================================================== -->
+  <div id="sizeGuideModal" class="modal-overlay" onclick="if(event.target === this) closeSizeGuide()">
+    <div class="modal-container size-guide-modal">
+      <button class="modal-close-btn" onclick="closeSizeGuide()">✕</button>
+      <div style="padding: 36px;">
+        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--gold-light); margin-bottom: 6px;">
+          📏 Master Fitting & Dimension Guide
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">
+          Find your exact bespoke fit across our footwear, timepieces, and sartorial suiting.
+        </p>
+
+        <div class="size-guide-tabs">
+          <button class="size-tab-btn active" data-tab="shoes" onclick="switchSizeTab('shoes')">Footwear (Shoes & Loafers)</button>
+          <button class="size-tab-btn" data-tab="watches" onclick="switchSizeTab('watches')">Watch Case Proportions</button>
+          <button class="size-tab-btn" data-tab="suits" onclick="switchSizeTab('suits')">Tailored Suiting & Apparel</button>
+        </div>
+
+        <div id="sizeGuideContent">
+          <!-- Populated by JS -->
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; margin-top: 20px;">
+          <button class="btn-gold" style="padding: 10px 24px; font-size: 0.8rem;" onclick="closeSizeGuide()">Got It</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       VIP CONCIERGE CHAT HUB MODAL (WHATSAPP SMART LAUNCHER)
+       ========================================================================== -->
+  <div id="conciergeHubModal" class="modal-overlay" onclick="if(event.target === this) closeConciergeHub()">
+    <div class="modal-container concierge-hub-modal">
+      <button class="modal-close-btn" onclick="closeConciergeHub()">✕</button>
+      <div style="padding: 36px;">
+        <div style="text-align: center; margin-bottom: 24px;">
+          <span style="font-size: 2.2rem; display: block; margin-bottom: 8px;">✨</span>
+          <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--gold-light); letter-spacing: 0.08em;">
+            VIP WhatsApp Concierge
+          </h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); max-width: 440px; margin: 6px auto 0;">
+            Connect with our head curator directly for personalized styling, size verification, or bespoke inquiries.
+          </p>
+        </div>
+
+        <div class="concierge-options-list">
+          <div class="concierge-option-card" onclick="launchConciergeTopic('stock')">
+            <span class="concierge-opt-icon">📦</span>
+            <div>
+              <h4 class="concierge-opt-title">In-Store Stock & Urgent Dispatch</h4>
+              <p class="concierge-opt-desc">Verify availability of a specific piece for immediate courier delivery.</p>
+            </div>
+          </div>
+
+          <div class="concierge-option-card" onclick="launchConciergeTopic('sizing')">
+            <span class="concierge-opt-icon">📏</span>
+            <div>
+              <h4 class="concierge-opt-title">Personal Sizing & Fitting Consultation</h4>
+              <p class="concierge-opt-desc">Share your measurements with our master tailors for a guaranteed fit.</p>
+            </div>
+          </div>
+
+          <div class="concierge-option-card" onclick="launchConciergeTopic('gift')">
+            <span class="concierge-opt-icon">🎁</span>
+            <div>
+              <h4 class="concierge-opt-title">VIP Gift Boxing & Wax-Sealed Notes</h4>
+              <p class="concierge-opt-desc">Request our signature presentation box and custom engraved message.</p>
+            </div>
+          </div>
+
+          <div class="concierge-option-card" onclick="launchConciergeTopic('bespoke')">
+            <span class="concierge-opt-icon">💎</span>
+            <div>
+              <h4 class="concierge-opt-title">Bespoke Horology / Rare Sourcing</h4>
+              <p class="concierge-opt-desc">Inquire about high-complication timepieces or custom leather work.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; font-size: 0.76rem; color: var(--text-muted); margin-top: 14px;">
+          Direct WhatsApp line: <span class="dyn-phone">+1 (555) 019-2834</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       PRINTABLE LUXURY INVOICE MODAL
+       ========================================================================== -->
+  <div id="invoiceModal" class="modal-overlay" onclick="if(event.target === this) closeInvoiceModal()">
+    <div class="modal-container" style="max-width: 720px;">
+      <button class="modal-close-btn" onclick="closeInvoiceModal()">✕</button>
+      <div id="invoiceModalBody" style="padding: 36px;">
+        <!-- Injected by JavaScript -->
       </div>
     </div>
   </div>
@@ -778,11 +1163,11 @@
   <!-- ==========================================================================
        FLOATING WHATSAPP BUTTON & MOBILE NAVIGATION
        ========================================================================== -->
-  <a id="floatingWhatsApp" class="floating-whatsapp" href="#" target="_blank" aria-label="Chat on WhatsApp">
+  <a id="floatingWhatsApp" class="floating-whatsapp" href="javascript:void(0)" onclick="openConciergeHub()" aria-label="Chat on WhatsApp">
     <svg viewBox="0 0 24 24">
       <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c4.56 0 8.25 3.69 8.25 8.24 0 2.2-.86 4.28-2.42 5.83a8.216 8.216 0 0 1-5.83 2.42c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.39c0-4.55 3.7-8.24 8.25-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8 2.53 1.09 2.53.73 2.99.69.45-.05 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.12-.22-.19-.47-.31z"/>
     </svg>
-    <div class="floating-tooltip">Chat with Uncle / Concierge</div>
+    <div class="floating-tooltip">VIP WhatsApp Concierge</div>
   </a>
 
   <!-- Mobile Bottom Sticky Navigation -->
@@ -801,6 +1186,13 @@
         <rect x="3" y="14" width="7" height="7"></rect>
       </svg>
       <span>Catalog</span>
+    </button>
+    <button class="mobile-bar-item" onclick="openSearchOverlay()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <span>Search</span>
     </button>
     <button class="mobile-bar-item" onclick="openWishlistModal()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
