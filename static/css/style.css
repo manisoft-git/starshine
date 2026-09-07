@@ -3751,3 +3751,306 @@ body:hover .custom-cursor-dot, body:hover .custom-cursor-ring {
     display: none;
   }
 }
+
+/* ==========================================================================
+   LUSION-STYLE EXPANDABLE MONOGRAM FLOATING DOCK & SCROLL 3D PHYSICS
+   ========================================================================== */
+
+/* The Floating Monogram Dock */
+.lusion-dock-wrapper {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 10000;
+  font-family: var(--font-sans);
+}
+
+/* Collapsed Pill */
+.lusion-dock-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(13, 16, 23, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.65), 0 0 20px rgba(212, 175, 55, 0.15);
+  padding: 8px 18px 8px 10px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lusion-dock-pill:hover {
+  border-color: rgba(212, 175, 55, 0.8);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75), 0 0 30px rgba(212, 175, 55, 0.35);
+  transform: translateY(-3px) scale(1.03);
+}
+
+.dock-monogram-emblem {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1f2430 0%, #0c0e14 100%);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.dock-sparkle {
+  color: var(--gold-primary);
+  font-size: 0.65rem;
+  position: absolute;
+  top: 4px;
+  right: 6px;
+}
+
+.dock-initials {
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dock-pill-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dock-status-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+.dock-pill-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.dock-sound-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 14px;
+  padding-left: 6px;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.sound-bar {
+  width: 2px;
+  background: var(--gold-primary);
+  border-radius: 2px;
+}
+
+.bar-1 { height: 6px; animation: soundWave 0.8s infinite ease-in-out alternate; }
+.bar-2 { height: 12px; animation: soundWave 1.1s infinite 0.2s ease-in-out alternate; }
+.bar-3 { height: 8px; animation: soundWave 0.9s infinite 0.4s ease-in-out alternate; }
+
+@keyframes soundWave {
+  0% { height: 3px; }
+  100% { height: 13px; }
+}
+
+/* Expanded Panel */
+.lusion-dock-panel {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 360px;
+  background: rgba(13, 16, 24, 0.95);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.88), 0 0 40px rgba(212, 175, 55, 0.2);
+  border-radius: 20px;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px) scale(0.95);
+  transform-origin: bottom right;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lusion-dock-wrapper.expanded .lusion-dock-panel {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.lusion-dock-wrapper.expanded .lusion-dock-pill {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.85);
+}
+
+.dock-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 14px;
+}
+
+.dock-panel-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.dock-panel-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: #fff;
+  letter-spacing: 0.05em;
+  margin: 0 0 2px 0;
+}
+
+.dock-panel-sub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.dock-close-btn {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  transition: var(--transition-fast);
+}
+
+.dock-close-btn:hover {
+  color: #fff;
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dock-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dock-section-title {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.dock-currency-pills, .dock-atmosphere-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-dock-currency, .btn-dock-atmos {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 0.76rem;
+  padding: 7px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-dock-currency:hover, .btn-dock-atmos:hover {
+  color: #fff;
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.btn-dock-currency.active, .btn-dock-atmos.active {
+  background: var(--gold-gradient);
+  color: #090a0d;
+  font-weight: 700;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.dock-toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.btn-dock-switch {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-dock-switch.active {
+  background: #10b981;
+  color: #fff;
+  border-color: #10b981;
+}
+
+.btn-dock-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: #25d366;
+  color: #fff;
+  font-size: 0.86rem;
+  font-weight: 700;
+  padding: 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: var(--transition-fast);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3);
+}
+
+.btn-dock-whatsapp:hover {
+  background: #20ba5a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+}
+
+/* Scroll 3D Dynamic Tilt Physics */
+.scroll-3d-tilt {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.scroll-3d-tilt:hover {
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 35px rgba(212, 175, 55, 0.22);
+}

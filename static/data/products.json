@@ -1,28 +1,28 @@
 [
   {
     "id": "watch-01",
-    "name": "Aethelgard Skeleton Automatic Gold",
+    "name": "Aethelgard Royal Skeleton Automatic Gold",
     "category": "watches",
     "categoryName": "Horology & Watches",
-    "price": 420,
-    "originalPrice": 520,
-    "rating": 4.9,
-    "reviewsCount": 84,
-    "badge": "Exclusive",
+    "price": 440,
+    "originalPrice": 550,
+    "rating": 5.0,
+    "reviewsCount": 128,
+    "badge": "Masterpiece",
     "isFeatured": true,
     "isBestSeller": true,
     "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=80",
     "secondaryImage": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=900&q=80",
-    "description": "Exquisite open-work skeleton automatic movement encased in 316L surgical stainless steel with 18K champagne gold accents and scratch-resistant sapphire crystal.",
+    "description": "Exquisite open-work skeleton automatic movement encased in 316L surgical stainless steel with 18K champagne gold accents, visible tourbillon balance wheel, and scratch-resistant sapphire crystal.",
     "features": [
-      "Automatic Mechanical Movement",
-      "Scratch-Proof Sapphire Glass",
-      "50M Water Resistance",
-      "Handcrafted Italian Leather Band"
+      "Swiss-Caliber Automatic Skeleton Movement",
+      "Scratch-Proof Anti-Reflective Sapphire Glass",
+      "18K Champagne Gold Electroplated Bezel",
+      "50M Water Resistance & Exhibition Case Back"
     ],
     "colors": [
       {
-        "name": "Champagne Gold",
+        "name": "18K Champagne Gold",
         "hex": "#D4AF37"
       },
       {
@@ -30,7 +30,7 @@
         "hex": "#1A1A1A"
       },
       {
-        "name": "Silver Steel",
+        "name": "Platinum Silver",
         "hex": "#C0C0C0"
       }
     ],
@@ -38,73 +38,77 @@
       "40mm",
       "42mm"
     ],
-    "stockCount": 5
+    "stockCount": 4
   },
   {
     "id": "watch-02",
-    "name": "Monaco Chronograph Midnight Edition",
+    "name": "Presidential Fluted Emerald Chronometer",
     "category": "watches",
     "categoryName": "Horology & Watches",
-    "price": 350,
-    "originalPrice": 420,
-    "rating": 4.8,
-    "reviewsCount": 112,
-    "badge": "Best Seller",
+    "price": 375,
+    "originalPrice": 460,
+    "rating": 4.9,
+    "reviewsCount": 146,
+    "badge": "VIP Choice",
     "isFeatured": true,
     "isBestSeller": true,
     "image": "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&w=900&q=80",
     "secondaryImage": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=900&q=80",
-    "description": "Precision dual-subdial chronograph crafted for speed and elegance. Matte black ceramic bezel, tachymeter scale, and Swiss Super-LumiNova markers.",
+    "description": "Iconic fluted bezel timepiece featuring a deep imperial sunburst emerald dial, diamond index markers, and 18K gold-plated President jubilee bracelet.",
     "features": [
-      "High-Precision Chrono Movement",
-      "Ceramic Tachymeter Bezel",
-      "Super-LumiNova Night Vision",
-      "Quick-Release Deployant Clasp"
+      "Imperial Sunburst Emerald Dial",
+      "Fluted 18K Gold Mirror-Polished Bezel",
+      "Precision Automatic Day-Date Mechanism",
+      "Concealed Crown Folding Clasp"
     ],
     "colors": [
       {
-        "name": "Midnight Noir",
-        "hex": "#0F0F10"
+        "name": "Emerald & Gold",
+        "hex": "#0F5132"
       },
       {
-        "name": "Rose Gold & Onyx",
-        "hex": "#B76E79"
+        "name": "Champagne & Gold",
+        "hex": "#D4AF37"
+      },
+      {
+        "name": "Midnight Noir",
+        "hex": "#111111"
       }
     ],
     "sizes": [
-      "41mm",
-      "43mm"
+      "40mm",
+      "41mm"
     ],
-    "stockCount": 8
+    "stockCount": 7
   },
   {
     "id": "watch-03",
     "name": "Celestial Heritage Flying Tourbillon",
     "category": "watches",
     "categoryName": "Horology & Watches",
-    "price": 590,
-    "originalPrice": 750,
+    "price": 550,
+    "originalPrice": 720,
     "rating": 5.0,
-    "reviewsCount": 43,
-    "badge": "Masterpiece",
+    "reviewsCount": 62,
+    "badge": "Grand Complication",
     "isFeatured": true,
     "isBestSeller": false,
     "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80",
     "secondaryImage": "https://images.unsplash.com/photo-1533139502658-0198f920d8e8?auto=format&fit=crop&w=900&q=80",
-    "description": "True haute horlogerie showcasing an exposed flying tourbillon carriage, royal cobalt sunburst dial, and exhibition glass case back.",
+    "description": "True haute horlogerie showcasing an exposed 60-second flying tourbillon carriage, royal cobalt sunburst guilloch\u00e9 dial, and exhibition transparent case back.",
     "features": [
       "Hand-Wind Tourbillon Caliber",
-      "Exhibition Transparent Back",
-      "Cobalt Sunburst Guilloch\u00e9 Dial",
-      "Hand-Dyed Alligator Grain Leather"
+      "Exhibition Transparent Sapphire Back",
+      "Royal Cobalt Sunburst Guilloch\u00e9 Dial",
+      "Hand-Dyed Genuine Alligator Leather Strap"
     ],
     "colors": [
       {
-        "name": "Cobalt & Gold",
+        "name": "Cobalt Royal & Gold",
         "hex": "#1E3A8A"
       },
       {
-        "name": "Monochrome Gold",
+        "name": "Sovereign Gold",
         "hex": "#D4AF37"
       }
     ],
@@ -115,59 +119,60 @@
   },
   {
     "id": "watch-04",
-    "name": "Astral Minimalist Black Diamond",
+    "name": "Monaco Dual-Chronograph Obsidian Edition",
     "category": "watches",
     "categoryName": "Horology & Watches",
-    "price": 270,
-    "originalPrice": 330,
-    "rating": 4.7,
-    "reviewsCount": 65,
-    "badge": "Sleek",
+    "price": 320,
+    "originalPrice": 390,
+    "rating": 4.8,
+    "reviewsCount": 89,
+    "badge": "High Precision",
     "isFeatured": false,
     "isBestSeller": false,
     "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80",
     "secondaryImage": "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=900&q=80",
-    "description": "Ultra-thin 6.8mm profile with satin-brushed charcoal dial, genuine diamond hour marker at 12 o'clock, and fluid Milanese mesh strap.",
+    "description": "Precision dual-subdial chronograph crafted for speed and poise. Matte black ceramic bezel, tachymeter scale, and Swiss Super-LumiNova luminescence.",
     "features": [
-      "Ultra-Slim 6.8mm Case",
-      "Lab-Grown Solitaire Marker",
-      "Fluid Milanese Mesh Strap",
-      "Anti-Scratch Sapphire Glass"
+      "Matte Obsidian Ceramic Bezel",
+      "Dual Flyback Chronograph Subdials",
+      "Fluid Milanese Steel Mesh Bracelet",
+      "Super-LumiNova Night Vision Indices"
     ],
     "colors": [
       {
-        "name": "Stealth Charcoal",
-        "hex": "#22252A"
+        "name": "Stealth Obsidian",
+        "hex": "#18181B"
       },
       {
-        "name": "Brushed Gold",
-        "hex": "#C5A059"
+        "name": "Rose Gold & Carbon",
+        "hex": "#B76E79"
       }
     ],
     "sizes": [
-      "39mm"
+      "41mm",
+      "43mm"
     ],
-    "stockCount": 14
+    "stockCount": 11
   },
   {
     "id": "shoes-01",
-    "name": "Milano Handcrafted Oxford Shoes",
+    "name": "Milano Handcrafted Patina Double Monk Shoes",
     "category": "shoes",
     "categoryName": "Footwear & Shoes",
-    "price": 280,
-    "originalPrice": 340,
+    "price": 245,
+    "originalPrice": 310,
     "rating": 4.9,
-    "reviewsCount": 95,
-    "badge": "Handmade",
+    "reviewsCount": 118,
+    "badge": "Italian Leather",
     "isFeatured": true,
     "isBestSeller": true,
     "image": "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=900&q=80",
     "secondaryImage": "https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=900&q=80",
-    "description": "Artisan calfskin leather dress shoes crafted with traditional Blake welting. Hand-burnished patina creates an unmatched richness and depth.",
+    "description": "Artisan calfskin double monk-strap dress shoes hand-crafted in Italy with Blake welting. Burnished cognac patina creates an unmatched richness that commands respect in every boardroom and occasion.",
     "features": [
-      "Full Grain Italian Calfskin",
-      "Blake Welting System",
-      "Hand-Dyed Patina Finish",
+      "100% Full Grain Italian Calfskin",
+      "Hand-Burnished Ombr\u00e9 Patina Finish",
+      "Solid Brushed Brass Dual Buckles",
       "Ergonomic Memory Leather Insole"
     ],
     "colors": [
@@ -188,41 +193,41 @@
       "EU 44",
       "EU 45"
     ],
-    "stockCount": 12
+    "stockCount": 14
   },
   {
     "id": "shoes-02",
-    "name": "Montecristo Tassel Suede Loafers",
+    "name": "Sovereign Velvet Tassel Loafers (Gold Crest)",
     "category": "shoes",
     "categoryName": "Footwear & Shoes",
-    "price": 230,
-    "originalPrice": 280,
-    "rating": 4.8,
-    "reviewsCount": 67,
-    "badge": "Trending",
+    "price": 220,
+    "originalPrice": 275,
+    "rating": 5.0,
+    "reviewsCount": 94,
+    "badge": "Wedding & Gala Essential",
     "isFeatured": true,
-    "isBestSeller": false,
+    "isBestSeller": true,
     "image": "https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=900&q=80",
     "secondaryImage": "https://images.unsplash.com/photo-1582588678413-dbf45f4823e9?auto=format&fit=crop&w=900&q=80",
-    "description": "Plush water-resistant split suede loafers with braided tassels and leather soles. The epitome of refined Mediterranean luxury.",
+    "description": "The quintessential Nigerian wedding & black-tie loafer. Deep midnight plush velvet with braided gold bullion tassels, quilted silk lining, and stacked leather dress heels.",
     "features": [
-      "Hydrophobic Velvet Suede",
-      "Handmade Braided Tassels",
-      "Stacked Leather Heel",
-      "Breathable Kidskin Lining"
+      "Ultra-Plush Hydrophobic Velvet",
+      "Hand-Braided Gold Wire Bullion Tassels",
+      "Red Quilted Silk Interior Lining",
+      "Goodyear Welted Beveled Leather Sole"
     ],
     "colors": [
       {
-        "name": "Espresso Brown",
-        "hex": "#3E2723"
+        "name": "Royal Midnight Navy",
+        "hex": "#0F172A"
       },
       {
-        "name": "Navy Riviera",
-        "hex": "#1A237E"
+        "name": "Imperial Emerald",
+        "hex": "#064E3B"
       },
       {
-        "name": "Warm Sand",
-        "hex": "#D7CCC8"
+        "name": "Black Obsidian",
+        "hex": "#111111"
       }
     ],
     "sizes": [
@@ -230,30 +235,72 @@
       "EU 41",
       "EU 42",
       "EU 43",
-      "EU 44"
+      "EU 44",
+      "EU 45"
     ],
     "stockCount": 9
   },
   {
     "id": "shoes-03",
-    "name": "Aura Luxury Nappa Hype Sneaker",
+    "name": "Artisan Italian Leather Senator Slip-On Mules",
     "category": "shoes",
     "categoryName": "Footwear & Shoes",
-    "price": 210,
-    "originalPrice": 260,
+    "price": 185,
+    "originalPrice": 230,
     "rating": 4.9,
-    "reviewsCount": 142,
-    "badge": "Top Rated",
+    "reviewsCount": 85,
+    "badge": "Senator Style",
     "isFeatured": true,
+    "isBestSeller": false,
+    "image": "https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=900&q=80",
+    "secondaryImage": "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=900&q=80",
+    "description": "Handcrafted open-back leather dress slides sculpted for Senator suits and Agbada attire. Croc-embossed full-grain leather with cushioned kidskin footbed for sovereign comfort.",
+    "features": [
+      "Full-Grain Croc-Embossed Leather",
+      "Comfort Open-Back Mule Silhouette",
+      "Kidskin Padded Anatomical Footbed",
+      "Anti-Slip Leather-Rubber Injected Sole"
+    ],
+    "colors": [
+      {
+        "name": "Noir Croc",
+        "hex": "#1C1917"
+      },
+      {
+        "name": "Mahogany Brown",
+        "hex": "#451A03"
+      }
+    ],
+    "sizes": [
+      "EU 40",
+      "EU 41",
+      "EU 42",
+      "EU 43",
+      "EU 44",
+      "EU 45"
+    ],
+    "stockCount": 16
+  },
+  {
+    "id": "shoes-04",
+    "name": "Aura Luxury Nappa Court Sneaker",
+    "category": "shoes",
+    "categoryName": "Footwear & Shoes",
+    "price": 168,
+    "originalPrice": 210,
+    "rating": 4.9,
+    "reviewsCount": 154,
+    "badge": "Best Seller",
+    "isFeatured": false,
     "isBestSeller": true,
     "image": "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=900&q=80",
     "secondaryImage": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=900&q=80",
-    "description": "Sleek low-profile court sneaker sculpted from buttery soft Nappa leather with padded collar, gold foil Starshine Enterprise emblem, and Italian Margom rubber sole.",
+    "description": "Sleek low-profile court sneaker sculpted from buttery soft Italian Nappa leather with padded collar, gold foil Starshine Enterprise emblem, and Margom rubber cupsole.",
     "features": [
-      "Full-Grain Butter Nappa",
-      "Margom Vulcanized Cupsole",
-      "Gold-Embossed Monogram",
-      "Waxed Cotton Laces"
+      "Full-Grain Italian Butter Nappa",
+      "Authentic Margom Vulcanized Cupsole",
+      "Gold-Embossed Starshine Enterprise Monogram",
+      "Waxed Hand-Laced Cotton Strings"
     ],
     "colors": [
       {
@@ -274,78 +321,122 @@
       "EU 44",
       "EU 45"
     ],
-    "stockCount": 15
-  },
-  {
-    "id": "shoes-04",
-    "name": "Verona Leather Chelsea Boot",
-    "category": "shoes",
-    "categoryName": "Footwear & Shoes",
-    "price": 290,
-    "originalPrice": 360,
-    "rating": 4.9,
-    "reviewsCount": 88,
-    "badge": "Iconic",
-    "isFeatured": false,
-    "isBestSeller": false,
-    "image": "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=900&q=80",
-    "secondaryImage": "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?auto=format&fit=crop&w=900&q=80",
-    "description": "Timeless silhouette tailored from smooth vegetable-tanned French leather with reinforced elastic side gussets and durable rubber-injected leather soles.",
-    "features": [
-      "Vegetable-Tanned French Box Calf",
-      "Custom Gold Pull Tabs",
-      "Elasticized Side Goring",
-      "Goodyear Welt Durability"
-    ],
-    "colors": [
-      {
-        "name": "Deep Chestnut",
-        "hex": "#4A1521"
-      },
-      {
-        "name": "Matte Jet Black",
-        "hex": "#121212"
-      }
-    ],
-    "sizes": [
-      "EU 40",
-      "EU 41",
-      "EU 42",
-      "EU 43",
-      "EU 44",
-      "EU 45"
-    ],
-    "stockCount": 7
+    "stockCount": 18
   },
   {
     "id": "clothes-01",
-    "name": "Venetian Tailored Virgin Wool Blazer",
+    "name": "Bespoke Imperial Senator Wool Ensemble",
     "category": "clothes",
-    "categoryName": "Apparel & Clothing",
-    "price": 360,
-    "originalPrice": 450,
-    "rating": 4.9,
-    "reviewsCount": 78,
-    "badge": "Signature",
+    "categoryName": "Apparel & Suiting",
+    "price": 225,
+    "originalPrice": 290,
+    "rating": 5.0,
+    "reviewsCount": 110,
+    "badge": "Signature Nigerian Luxury",
+    "isFeatured": true,
+    "isBestSeller": true,
+    "image": "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=900&q=80",
+    "secondaryImage": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80",
+    "description": "The gold standard of modern Nigerian luxury menswear. Tailored from ultra-premium wool-cashmere blend with structured mandarin collar, subtle geometric gold piping embroidery, and tapered trousers.",
+    "features": [
+      "Super 140s Wool & Cashmere Fabric",
+      "Mandarin Collar with Gold Metallic Filigree",
+      "Concealed Button Placket with French Cuffs",
+      "Precision Tapered Matching Trousers"
+    ],
+    "colors": [
+      {
+        "name": "Midnight Navy & Gold",
+        "hex": "#0F172A"
+      },
+      {
+        "name": "Charcoal Black & Gold",
+        "hex": "#18181B"
+      },
+      {
+        "name": "Pristine Off-White",
+        "hex": "#F8FAFC"
+      }
+    ],
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "stockCount": 8
+  },
+  {
+    "id": "clothes-02",
+    "name": "Royal Silk Jacquard Agbada 3-Piece Robe",
+    "category": "clothes",
+    "categoryName": "Apparel & Suiting",
+    "price": 335,
+    "originalPrice": 420,
+    "rating": 5.0,
+    "reviewsCount": 73,
+    "badge": "Royal Couture",
     "isFeatured": true,
     "isBestSeller": true,
     "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80",
     "secondaryImage": "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=900&q=80",
-    "description": "Sculpted Italian Super 130s virgin wool jacket with structured peak lapels, genuine buffalo horn buttons, and breathable champagne silk cupro lining.",
+    "description": "Unrivaled grandeur for state occasions, chieftancy, and high-society weddings. Flowing heavy-drape silk jacquard with intricate computerized chain-stitch embroidery and tailored buba & sokoto.",
     "features": [
-      "Super 130s Pure Virgin Wool",
-      "Cupro Bemberg Gold Lining",
-      "Buffalo Horn Hand-Stitched Buttons",
-      "Modern Drop-7 Italian Cut"
+      "Heavy Silk Damask & Jacquard Weave",
+      "Dense Computerized Chest & Back Embroidery",
+      "Breathable Anti-Crease Luxury Fabric",
+      "Complete 3-Piece (Grand Robe, Tunic & Trousers)"
     ],
     "colors": [
       {
-        "name": "Midnight Charcoal",
-        "hex": "#1F242D"
+        "name": "Obsidian & Gold Jacquard",
+        "hex": "#171717"
       },
       {
-        "name": "Deep Royal Navy",
-        "hex": "#101D36"
+        "name": "Royal Emerald Green",
+        "hex": "#064E3B"
+      },
+      {
+        "name": "Sovereign Ivory",
+        "hex": "#FEF3C7"
+      }
+    ],
+    "sizes": [
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "stockCount": 5
+  },
+  {
+    "id": "clothes-03",
+    "name": "Super 150s Double-Breasted Italian Wool Tuxedo",
+    "category": "clothes",
+    "categoryName": "Apparel & Suiting",
+    "price": 285,
+    "originalPrice": 360,
+    "rating": 4.9,
+    "reviewsCount": 86,
+    "badge": "Red Carpet",
+    "isFeatured": false,
+    "isBestSeller": false,
+    "image": "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?auto=format&fit=crop&w=900&q=80",
+    "secondaryImage": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80",
+    "description": "Sharp six-button double-breasted tuxedo crafted from Biella virgin wool with satin silk peak lapels and horn buttons. Designed for galas and award ceremonies.",
+    "features": [
+      "Super 150s Pure Biella Virgin Wool",
+      "Silk Grosgrain Satin Peak Lapels",
+      "Half-Canvas Construction for Superior Drape",
+      "Functional Surgeon Sleeve Cuffs"
+    ],
+    "colors": [
+      {
+        "name": "Midnight Noir",
+        "hex": "#0F0F11"
+      },
+      {
+        "name": "Bespoke Navy",
+        "hex": "#1E293B"
       }
     ],
     "sizes": [
@@ -355,41 +446,41 @@
       "44R",
       "46R"
     ],
-    "stockCount": 7
+    "stockCount": 6
   },
   {
-    "id": "clothes-02",
-    "name": "Giza Silk-Cotton Evening Dress Shirt",
+    "id": "clothes-04",
+    "name": "Egyptian Giza Cotton Luxury Kaftan Tunic",
     "category": "clothes",
-    "categoryName": "Apparel & Clothing",
-    "price": 145,
-    "originalPrice": 185,
+    "categoryName": "Apparel & Suiting",
+    "price": 135,
+    "originalPrice": 170,
     "rating": 4.8,
-    "reviewsCount": 104,
-    "badge": "Must Have",
-    "isFeatured": true,
-    "isBestSeller": false,
+    "reviewsCount": 115,
+    "badge": "Casual Aristocrat",
+    "isFeatured": false,
+    "isBestSeller": true,
     "image": "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=900&q=80",
-    "secondaryImage": "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=900&q=80",
-    "description": "Subtle radiant sheen made from 75% Egyptian Giza extra-long staple cotton and 25% mulberry silk. French cuffs, hidden placket, and Australian mother-of-pearl buttons.",
+    "secondaryImage": "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=900&q=80",
+    "description": "Silky-smooth extra-long staple Egyptian Giza cotton tunic with clean geometric neckline, mother-of-pearl buttons, and easy-draping tailored silhouette for sunny days.",
     "features": [
-      "Giza Long-Staple Cotton & Silk",
-      "Australian Mother-of-Pearl Buttons",
-      "Convertible French Cuffs",
-      "Wrinkle-Defying Nano Finish"
+      "100% Egyptian Long-Staple Giza Cotton",
+      "Genuine Australian Mother-of-Pearl Buttons",
+      "Silky Mercerized Lustrous Sheen",
+      "Wrinkle-Resistant Easy Care Finish"
     ],
     "colors": [
       {
-        "name": "Silk Optic White",
+        "name": "Pure Crisp White",
         "hex": "#FFFFFF"
       },
       {
-        "name": "Onyx Midnight",
-        "hex": "#111111"
+        "name": "Champagne Cream",
+        "hex": "#F5F5DC"
       },
       {
-        "name": "Champagne Pearl",
-        "hex": "#F4E8C1"
+        "name": "Sky Azure",
+        "hex": "#BAE6FD"
       }
     ],
     "sizes": [
@@ -402,92 +493,15 @@
     "stockCount": 20
   },
   {
-    "id": "clothes-03",
-    "name": "Savile Double-Breasted Trench Coat",
-    "category": "clothes",
-    "categoryName": "Apparel & Clothing",
-    "price": 480,
-    "originalPrice": 590,
-    "rating": 5.0,
-    "reviewsCount": 53,
-    "badge": "Iconic",
-    "isFeatured": true,
-    "isBestSeller": true,
-    "image": "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=900&q=80",
-    "secondaryImage": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=900&q=80",
-    "description": "Dense weatherproof gabardine cotton trench coat with belted waist, storm flap, gold-accented metal D-rings, and detachable houndstooth wool liner.",
-    "features": [
-      "Waterproof Dense Gabardine",
-      "Champagne Gold D-Rings & Buckles",
-      "Removable Fine Wool Warmer Liner",
-      "Tailored Epaulets & Storm Shield"
-    ],
-    "colors": [
-      {
-        "name": "Heritage Camel",
-        "hex": "#C19A6B"
-      },
-      {
-        "name": "Midnight Noir",
-        "hex": "#141416"
-      }
-    ],
-    "sizes": [
-      "M",
-      "L",
-      "XL"
-    ],
-    "stockCount": 4
-  },
-  {
-    "id": "clothes-04",
-    "name": "Mongolian Pure Cashmere Knit Sweater",
-    "category": "clothes",
-    "categoryName": "Apparel & Clothing",
-    "price": 195,
-    "originalPrice": 250,
-    "rating": 4.9,
-    "reviewsCount": 81,
-    "badge": "Ultra Soft",
-    "isFeatured": false,
-    "isBestSeller": false,
-    "image": "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=900&q=80",
-    "secondaryImage": "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&w=900&q=80",
-    "description": "2-ply 100% Grade-A Mongolian cashmere with ribbed mock neck collar, exceptionally lightweight warmth, and a cloud-like gentle touch.",
-    "features": [
-      "100% Grade-A Mongolian Cashmere",
-      "2-Ply Gauge Softness",
-      "Shape-Retaining Ribbed Cuffs",
-      "Naturally Breathable & Thermoregulating"
-    ],
-    "colors": [
-      {
-        "name": "Oatmeal Heather",
-        "hex": "#D6CFC7"
-      },
-      {
-        "name": "Anthracite Dark",
-        "hex": "#2B2D42"
-      }
-    ],
-    "sizes": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "stockCount": 11
-  },
-  {
     "id": "acc-01",
     "name": "Starshine Enterprise 24K Monogram Reversible Belt",
     "category": "accessories",
     "categoryName": "Accessories & Fine Goods",
     "price": 120,
     "originalPrice": 150,
-    "rating": 4.8,
-    "reviewsCount": 160,
-    "badge": "Essential",
+    "rating": 4.9,
+    "reviewsCount": 178,
+    "badge": "Signature Essential",
     "isFeatured": true,
     "isBestSeller": true,
     "image": "https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=900&q=80",
@@ -497,7 +511,7 @@
       "100% Full-Grain Saddle Hide",
       "24K Gold-Plated Swivel Buckle",
       "Reversible Black & Saddle Tan",
-      "Velvet Gift Box & Authenticity Card"
+      "Velvet Gift Box & Authenticity Certificate"
     ],
     "colors": [
       {
@@ -516,94 +530,60 @@
   },
   {
     "id": "acc-02",
-    "name": "Aviation 24K Gold Polarized Aviators",
+    "name": "18K Gold Cuban Link & Sovereign Signet Ring Set",
     "category": "accessories",
     "categoryName": "Accessories & Fine Goods",
-    "price": 175,
-    "originalPrice": 220,
-    "rating": 4.9,
-    "reviewsCount": 89,
-    "badge": "Trending",
+    "price": 310,
+    "originalPrice": 390,
+    "rating": 5.0,
+    "reviewsCount": 92,
+    "badge": "Precious Metals",
     "isFeatured": true,
-    "isBestSeller": false,
-    "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=80",
-    "secondaryImage": "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=900&q=80",
-    "description": "Ultra-light Japanese titanium aviators dipped in 24K champagne gold, equipped with Carl Zeiss polarized emerald crystal lenses and spring hinges.",
+    "isBestSeller": true,
+    "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=80",
+    "secondaryImage": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=80",
+    "description": "Heavyweight 12mm Cuban link curb chain with secure box clasp, paired with a matching sovereign signet ring inlaid with natural black onyx and brilliant pave crystals.",
     "features": [
-      "Ultra-Light Japanese Titanium",
-      "Zeiss High-Definition Polarized Glass",
-      "Complete UV400 Protection",
-      "Handcrafted Leather Hard Case"
+      "Triple 18K Yellow Gold Electroplating",
+      "Heavy Solid Core Brass / Steel Construction",
+      "Hand-Cut Brazilian Black Onyx Inlay",
+      "Hypoallergenic & Anti-Tarnish Lifetime Finish"
     ],
     "colors": [
       {
-        "name": "Gold & Emerald Green",
+        "name": "18K Yellow Gold",
         "hex": "#D4AF37"
       },
       {
-        "name": "Gold & Smoke Gradient",
-        "hex": "#374151"
+        "name": "Platinum Silver",
+        "hex": "#E2E8F0"
       }
     ],
     "sizes": [
-      "Standard (58mm)"
+      "55cm Chain + Ring Size 9",
+      "60cm Chain + Ring Size 10",
+      "60cm Chain + Ring Size 11"
     ],
-    "stockCount": 11
+    "stockCount": 10
   },
   {
     "id": "acc-03",
-    "name": "Crocodile Embossed RFID Bifold Wallet",
+    "name": "Brazilian Onyx & 925 Sterling Silver Cufflinks",
     "category": "accessories",
     "categoryName": "Accessories & Fine Goods",
-    "price": 98,
-    "originalPrice": 130,
-    "rating": 4.9,
-    "reviewsCount": 114,
-    "badge": "Popular",
-    "isFeatured": false,
-    "isBestSeller": true,
-    "image": "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=900&q=80",
-    "secondaryImage": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=900&q=80",
-    "description": "Sculpted from genuine crocodile-embossed calfskin with RFID anti-theft protection weave, 8 card slots, dual note dividers, and gold foil typography.",
-    "features": [
-      "Military-Grade RFID Blocking",
-      "8 Precision Card Pockets",
-      "Crocodile-Embossed Italian Calfskin",
-      "Ultra-Slim 7mm Profile"
-    ],
-    "colors": [
-      {
-        "name": "Obsidian Croc",
-        "hex": "#151515"
-      },
-      {
-        "name": "Chestnut Croc",
-        "hex": "#663300"
-      }
-    ],
-    "sizes": [
-      "Classic Bifold"
-    ],
-    "stockCount": 18
-  },
-  {
-    "id": "acc-04",
-    "name": "Sterling Silver & Black Onyx Cufflinks",
-    "category": "accessories",
-    "categoryName": "Accessories & Fine Goods",
-    "price": 85,
+    "price": 87,
     "originalPrice": 110,
-    "rating": 4.8,
-    "reviewsCount": 47,
-    "badge": "Luxury",
+    "rating": 4.9,
+    "reviewsCount": 68,
+    "badge": "Sartorial",
     "isFeatured": false,
     "isBestSeller": false,
     "image": "https://images.unsplash.com/photo-1590548784585-643d2b9f2925?auto=format&fit=crop&w=900&q=80",
     "secondaryImage": "https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=900&q=80",
     "description": "Hand-set faceted natural Brazilian black onyx in solid 925 sterling silver with tarnish-resistant rhodium finish and swivel toggle backs.",
     "features": [
-      "Solid 925 Sterling Silver",
-      "Natural Brazilian Black Onyx",
+      "Solid 925 Sterling Silver Core",
+      "Natural Brazilian Black Onyx Gemstone",
       "Anti-Tarnish Rhodium Finish",
       "Engraved Starshine Enterprise Hallmark"
     ],
@@ -621,5 +601,41 @@
       "One Size (16mm)"
     ],
     "stockCount": 22
+  },
+  {
+    "id": "acc-04",
+    "name": "Aerospace Grade 5 Titanium Aviator Sunglasses",
+    "category": "accessories",
+    "categoryName": "Accessories & Fine Goods",
+    "price": 112,
+    "originalPrice": 140,
+    "rating": 4.8,
+    "reviewsCount": 134,
+    "badge": "Polarized",
+    "isFeatured": false,
+    "isBestSeller": true,
+    "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=80",
+    "secondaryImage": "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=900&q=80",
+    "description": "Featherweight 18-gram frame crafted from Grade 5 aerospace titanium with gradient champagne polarized nylon lenses and anti-scratch hydrophobic coating.",
+    "features": [
+      "Grade 5 Aerospace Titanium Frame",
+      "100% UV400 Polarized Nylon Lenses",
+      "Featherlight 18-Gram Construction",
+      "Starshine Enterprise Hard Leather Case Included"
+    ],
+    "colors": [
+      {
+        "name": "Gold Titanium & Amber",
+        "hex": "#D4AF37"
+      },
+      {
+        "name": "Gunmetal & Smoke",
+        "hex": "#374151"
+      }
+    ],
+    "sizes": [
+      "Standard (58-14-140)"
+    ],
+    "stockCount": 18
   }
 ]

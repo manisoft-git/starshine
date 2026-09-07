@@ -7,21 +7,22 @@
 // Default Configurations
 const DEFAULT_SETTINGS = {
   storeName: "STARSHINE ENTERPRISE",
-  whatsappNumber: "15550192834", // Uncle's WhatsApp Phone Number (Digits only with country code)
-  displayPhone: "+1 (555) 019-2834",
-  email: "concierge@starshine-luxe.com",
-  currency: "USD",
-  freeShippingThreshold: 150
+  whatsappNumber: "2348012345678", // Uncle's WhatsApp Phone Number (Digits only with Nigeria country code)
+  displayPhone: "+234 (0) 801 234 5678",
+  storeLocation: "Victoria Island, Lagos, Nigeria",
+  email: "concierge@starshine-enterprise.com",
+  currency: "NGN", // NAIRA IS DEFAULT!
+  freeShippingThreshold: 250000 // In Naira
 };
 
 // Currency Rates relative to USD
 const CURRENCIES = {
-  USD: { symbol: "$", rate: 1.0, format: "prefix" },
-  EUR: { symbol: "€", rate: 0.92, format: "prefix" },
-  GBP: { symbol: "£", rate: 0.79, format: "prefix" },
-  INR: { symbol: "₹", rate: 83.5, format: "prefix" },
-  AED: { symbol: " AED", rate: 3.67, format: "suffix" },
-  CAD: { symbol: "C$", rate: 1.36, format: "prefix" }
+  NGN: { symbol: "₦", rate: 1550.0, format: "prefix", label: "NGN (₦)" },
+  USD: { symbol: "$", rate: 1.0, format: "prefix", label: "USD ($)" },
+  GBP: { symbol: "£", rate: 0.79, format: "prefix", label: "GBP (£)" },
+  EUR: { symbol: "€", rate: 0.92, format: "prefix", label: "EUR (€)" },
+  AED: { symbol: " AED", rate: 3.67, format: "suffix", label: "AED (د.إ)" },
+  CAD: { symbol: "C$", rate: 1.36, format: "prefix", label: "CAD (C$)" }
 };
 
 // Global State
@@ -34,10 +35,16 @@ let currentSort = "featured";
 let cart = JSON.parse(localStorage.getItem("starshine_cart") || "[]");
 let wishlist = JSON.parse(localStorage.getItem("starshine_wishlist") || "[]");
 let settings = JSON.parse(localStorage.getItem("starshine_settings") || JSON.stringify(DEFAULT_SETTINGS));
+if (!settings.currency || settings.currency === "USD") {
+  settings.currency = "NGN";
+}
 if (settings.storeName === "STARSHINE") {
   settings.storeName = "STARSHINE ENTERPRISE";
-  localStorage.setItem("starshine_settings", JSON.stringify(settings));
 }
+if (!settings.storeLocation) {
+  settings.storeLocation = "Victoria Island, Lagos, Nigeria";
+}
+localStorage.setItem("starshine_settings", JSON.stringify(settings));
 let appliedPromo = null; // { code: 'STAR10', discountPercent: 10 }
 
 let activeModalProduct = null;
@@ -873,51 +880,51 @@ document.addEventListener("mousemove", (e) => {
 const CAPSULES = [
   {
     id: "capsule-gala",
-    title: "The Black-Tie Gala",
-    subtitle: "Bespoke Evening Grandeur",
+    title: "The Boardroom Sovereign",
+    subtitle: "High Executive Poise",
     badge: "15% Bundle Savings",
     image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80",
-    description: "The quintessential formal statement pairing pure Italian wool, open-heart horology, and hand-burnished calfskin.",
+    description: "The quintessential corporate power statement pairing Italian double-breasted wool tailoring, Swiss skeleton gold horology, and burnished patina double monks.",
     items: [
-      { id: "watch-03", name: "Celestial Flying Tourbillon", price: 590 },
-      { id: "clothes-01", name: "Venetian Tailored Wool Blazer", price: 360 },
-      { id: "shoes-01", name: "Milano Handcrafted Oxford Shoes", price: 280 },
-      { id: "acc-04", name: "Sterling Silver & Onyx Cufflinks", price: 85 }
+      { id: "watch-01", name: "Aethelgard Royal Skeleton Automatic Gold", price: 440 },
+      { id: "clothes-03", name: "Super 150s Double-Breasted Italian Wool Tuxedo", price: 285 },
+      { id: "shoes-01", name: "Milano Handcrafted Patina Double Monk Shoes", price: 245 },
+      { id: "acc-01", name: "Starshine Enterprise 24K Monogram Reversible Belt", price: 120 }
     ],
-    originalTotal: 1315,
-    bundlePrice: 1117
+    originalTotal: 1090,
+    bundlePrice: 925
   },
   {
     id: "capsule-riviera",
-    title: "The Riviera Connoisseur",
-    subtitle: "Effortless Mediterranean Luxury",
-    badge: "Most Coveted",
+    title: "The Imperial Owambe Gala",
+    subtitle: "Regal Society Grandeur",
+    badge: "Most Coveted in Lagos",
     image: "https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=900&q=80",
-    description: "Sun-drenched sophistication crafted with water-resistant suede loafers, ceramic chronograph, and 24K gold aviators.",
+    description: "Royal presence for high-society Nigerian celebrations. Heavy silk jacquard Agbada, gold fluted emerald chronometer, bullion tassel loafers, and solid 18K gold curb jewelry.",
     items: [
-      { id: "watch-02", name: "Monaco Chronograph Midnight", price: 350 },
-      { id: "shoes-02", name: "Montecristo Tassel Suede Loafers", price: 230 },
-      { id: "clothes-02", name: "Giza Silk-Cotton Evening Shirt", price: 145 },
-      { id: "acc-02", name: "Aviation 24K Gold Aviators", price: 175 }
+      { id: "watch-02", name: "Presidential Fluted Emerald Chronometer", price: 375 },
+      { id: "clothes-02", name: "Royal Silk Jacquard Agbada 3-Piece Robe", price: 335 },
+      { id: "shoes-02", name: "Sovereign Velvet Tassel Loafers (Gold Crest)", price: 220 },
+      { id: "acc-02", name: "18K Gold Cuban Link & Sovereign Signet Ring Set", price: 310 }
     ],
-    originalTotal: 900,
-    bundlePrice: 765
+    originalTotal: 1240,
+    bundlePrice: 1050
   },
   {
     id: "capsule-urban",
-    title: "The Wall Street Minimalist",
-    subtitle: "Contemporary Modern Poise",
+    title: "The Lagos Senator Aristocrat",
+    subtitle: "Modern Sartorial Poise",
     badge: "Editorial Choice",
-    image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=900&q=80",
-    description: "Sleek low-profile court sneakers, Mongolian pure cashmere knit, and ultra-thin black diamond horology.",
+    image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=900&q=80",
+    description: "Contemporary Nigerian refinement: bespoke wool-cashmere Senator tunic with gold filigree collar, croc-embossed slip-on mules, ceramic chronograph, and titanium shades.",
     items: [
-      { id: "watch-04", name: "Astral Minimalist Black Diamond", price: 270 },
-      { id: "shoes-03", name: "Aura Luxury Nappa Court Sneaker", price: 210 },
-      { id: "clothes-04", name: "Mongolian Pure Cashmere Knit", price: 195 },
-      { id: "acc-01", name: "Starshine Enterprise 24K Monogram Belt", price: 120 }
+      { id: "watch-04", name: "Monaco Dual-Chronograph Obsidian Edition", price: 320 },
+      { id: "clothes-01", name: "Bespoke Imperial Senator Wool Ensemble", price: 225 },
+      { id: "shoes-03", name: "Artisan Italian Leather Senator Slip-On Mules", price: 185 },
+      { id: "acc-04", name: "Aerospace Grade 5 Titanium Aviator Sunglasses", price: 112 }
     ],
-    originalTotal: 795,
-    bundlePrice: 675
+    originalTotal: 842,
+    bundlePrice: 715
   }
 ];
 
@@ -1374,3 +1381,13 @@ function order3DWatchWhatsApp() {
   const waUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(msg)}`;
   window.open(waUrl, "_blank");
 }
+
+// Global Exports for 3D Engine and Lusion Dock
+window.CURRENCIES = CURRENCIES;
+window.settings = settings;
+window.formatPrice = formatPrice;
+window.renderProducts = renderProducts;
+window.updateCartUI = updateCartUI;
+window.playMechanicalTick = playMechanicalTick;
+window.showToast = showToast;
+
