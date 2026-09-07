@@ -50,7 +50,7 @@ def generate_whatsapp_link():
     data = request.get_json() or {}
     phone = data.get('phone', '15550192834').replace('+', '').replace(' ', '').replace('-', '')
     items = data.get('items', [])
-    store_name = data.get('store_name', 'STARSHINE')
+    store_name = data.get('store_name', 'STARSHINE ENTERPRISE')
     notes = data.get('notes', '')
 
     msg_lines = [
@@ -85,9 +85,9 @@ def generate_whatsapp_link():
 
 @app.route('/health')
 def health():
-    return jsonify({"status": "healthy", "store": "STARSHINE HAUTE COLLECTION", "version": "1.0.0"})
+    return jsonify({"status": "healthy", "store": "STARSHINE ENTERPRISE HAUTE COLLECTION", "version": "1.0.0"})
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
-    print(f"🌟 STARSHINE Haute Collection online on http://0.0.0.0:{port}")
+    print(f"🌟 STARSHINE ENTERPRISE Haute Collection online on http://0.0.0.0:{port}")
     app.run(host='0.0.0.0', port=port, debug=True)

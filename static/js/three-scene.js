@@ -575,7 +575,7 @@
     const titles = [
       "Aethelgard Celestial Skeleton Tourbillon",
       "Aura Handcrafted Italian Nappa Court Sneaker",
-      "Starshine 24K Sovereign Signet Ring",
+      "Starshine Enterprise 24K Sovereign Signet Ring",
       "Titanium Aerospace Polarized Aviators"
     ];
     const categories = ["HOROLOGY & TIMEPIECES", "ARTISAN FOOTWEAR", "FINE JEWELRY & MONOGRAMS", "AEROSPACE EYEWEAR"];

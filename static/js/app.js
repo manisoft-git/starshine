@@ -6,7 +6,7 @@
 
 // Default Configurations
 const DEFAULT_SETTINGS = {
-  storeName: "STARSHINE",
+  storeName: "STARSHINE ENTERPRISE",
   whatsappNumber: "15550192834", // Uncle's WhatsApp Phone Number (Digits only with country code)
   displayPhone: "+1 (555) 019-2834",
   email: "concierge@starshine-luxe.com",
@@ -34,6 +34,10 @@ let currentSort = "featured";
 let cart = JSON.parse(localStorage.getItem("starshine_cart") || "[]");
 let wishlist = JSON.parse(localStorage.getItem("starshine_wishlist") || "[]");
 let settings = JSON.parse(localStorage.getItem("starshine_settings") || JSON.stringify(DEFAULT_SETTINGS));
+if (settings.storeName === "STARSHINE") {
+  settings.storeName = "STARSHINE ENTERPRISE";
+  localStorage.setItem("starshine_settings", JSON.stringify(settings));
+}
 let appliedPromo = null; // { code: 'STAR10', discountPercent: 10 }
 
 let activeModalProduct = null;
@@ -710,7 +714,7 @@ function initEventListeners() {
       e.preventDefault();
       const email = document.getElementById("newsletterEmail").value;
       if (email) {
-        showToast("✨ Welcome to Starshine Privé! Use code STAR10 for 10% off.");
+        showToast("✨ Welcome to Starshine Enterprise Privé! Use code STAR10 for 10% off.");
         document.getElementById("newsletterEmail").value = "";
       }
     });
@@ -910,7 +914,7 @@ const CAPSULES = [
       { id: "watch-04", name: "Astral Minimalist Black Diamond", price: 270 },
       { id: "shoes-03", name: "Aura Luxury Nappa Court Sneaker", price: 210 },
       { id: "clothes-04", name: "Mongolian Pure Cashmere Knit", price: 195 },
-      { id: "acc-01", name: "Starshine 24K Monogram Belt", price: 120 }
+      { id: "acc-01", name: "Starshine Enterprise 24K Monogram Belt", price: 120 }
     ],
     originalTotal: 795,
     bundlePrice: 675
@@ -1232,7 +1236,7 @@ function openInvoiceModal() {
       </div>
 
       <div style="margin-top: 24px; padding-top: 14px; border-top: 1px dashed var(--border-subtle); font-size: 0.74rem; color: var(--text-muted); text-align: center;">
-        ✦ Official Starshine Certificate of Authenticity & Hand-Inspection Guaranteed ✦
+        ✦ Official Starshine Enterprise Certificate of Authenticity & Hand-Inspection Guaranteed ✦
       </div>
     </div>
 

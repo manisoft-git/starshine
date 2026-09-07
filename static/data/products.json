@@ -248,7 +248,7 @@
     "isBestSeller": true,
     "image": "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=900&q=80",
     "secondaryImage": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=900&q=80",
-    "description": "Sleek low-profile court sneaker sculpted from buttery soft Nappa leather with padded collar, gold foil Starshine emblem, and Italian Margom rubber sole.",
+    "description": "Sleek low-profile court sneaker sculpted from buttery soft Nappa leather with padded collar, gold foil Starshine Enterprise emblem, and Italian Margom rubber sole.",
     "features": [
       "Full-Grain Butter Nappa",
       "Margom Vulcanized Cupsole",
@@ -480,7 +480,7 @@
   },
   {
     "id": "acc-01",
-    "name": "Starshine 24K Monogram Reversible Belt",
+    "name": "Starshine Enterprise 24K Monogram Reversible Belt",
     "category": "accessories",
     "categoryName": "Accessories & Fine Goods",
     "price": 120,
@@ -492,7 +492,7 @@
     "isBestSeller": true,
     "image": "https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=900&q=80",
     "secondaryImage": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=80",
-    "description": "Dual-sided premium full-grain saddle leather with 24K gold-plated rotating Starshine emblem buckle. Flawlessly transitions between formal black and casual cognac.",
+    "description": "Dual-sided premium full-grain saddle leather with 24K gold-plated rotating Starshine Enterprise emblem buckle. Flawlessly transitions between formal black and casual cognac.",
     "features": [
       "100% Full-Grain Saddle Hide",
       "24K Gold-Plated Swivel Buckle",
@@ -605,7 +605,7 @@
       "Solid 925 Sterling Silver",
       "Natural Brazilian Black Onyx",
       "Anti-Tarnish Rhodium Finish",
-      "Engraved Starshine Hallmark"
+      "Engraved Starshine Enterprise Hallmark"
     ],
     "colors": [
       {
