@@ -3415,3 +3415,339 @@ body:hover .cursor-spotlight {
     height: 440px;
   }
 }
+
+/* ==========================================================================
+   LUSION-CALIBER FULL-SCREEN 3D HERO STAGE & SWISS HUD OVERLAY
+   ========================================================================== */
+
+/* Full Viewport 3D Hero Section */
+.hero-3d-fullscreen {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 60% 45%, #141722 0%, #08090d 75%);
+}
+
+#webgl-hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: block;
+  cursor: grab;
+}
+
+#webgl-hero-canvas:active {
+  cursor: grabbing;
+}
+
+/* Swiss Crosshair Decorators */
+.crosshair {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.4;
+}
+
+.crosshair::before, .crosshair::after {
+  content: '';
+  position: absolute;
+  background: var(--gold-primary);
+}
+
+.crosshair::before {
+  top: 8px;
+  left: 0;
+  width: 18px;
+  height: 1px;
+}
+
+.crosshair::after {
+  top: 0;
+  left: 8px;
+  width: 1px;
+  height: 18px;
+}
+
+.crosshair-tl { top: 24px; left: 24px; }
+.crosshair-tr { top: 24px; right: 24px; }
+.crosshair-bl { bottom: 24px; left: 24px; }
+.crosshair-br { bottom: 24px; right: 24px; }
+
+/* 3D Model Switcher Bar (Floating Top Center) */
+.hero-model-switcher {
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  gap: 8px;
+  background: rgba(13, 15, 22, 0.85);
+  backdrop-filter: blur(20px);
+  padding: 6px;
+  border-radius: 40px;
+  border: 1px solid var(--border-gold-subtle);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.btn-3d-model-tab {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition-fast);
+}
+
+.btn-3d-model-tab:hover {
+  color: #fff;
+}
+
+.btn-3d-model-tab.active {
+  background: var(--gold-gradient);
+  color: #000;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+}
+
+/* Hero 3D Typography Overlay (Left Side) */
+.hero-3d-overlay {
+  position: relative;
+  z-index: 10;
+  max-width: 580px;
+  padding: 120px 0 80px;
+  pointer-events: none; /* Let user drag 3D canvas behind text except on buttons */
+}
+
+.hero-3d-overlay * {
+  pointer-events: auto;
+}
+
+.hero-telemetry-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--border-gold-subtle);
+  border-radius: 30px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-3d-category {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.hero-3d-main-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.8vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 18px;
+  text-shadow: 0 4px 25px rgba(0,0,0,0.8);
+}
+
+.hero-3d-description {
+  font-size: 0.96rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+}
+
+/* Floating Right Action Dock (Finishes & 3D Tools) */
+.hero-3d-tools-dock {
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.hero-3d-palette-box {
+  background: rgba(13, 15, 22, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-gold-subtle);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.hero-3d-palette-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  text-align: center;
+}
+
+.hero-palette-swatches {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-tool-pill {
+  background: rgba(13, 15, 22, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-gold-subtle);
+  color: var(--gold-light);
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 11px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition-fast);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.btn-tool-pill:hover, .btn-tool-pill.active {
+  background: var(--gold-gradient);
+  color: #000;
+  border-color: transparent;
+  transform: scale(1.04);
+}
+
+/* Bottom Telemetry HUD Bar */
+.hero-3d-telemetry-bar {
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  pointer-events: none;
+}
+
+.telemetry-item {
+  font-family: monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  background: rgba(10, 11, 15, 0.7);
+  backdrop-filter: blur(8px);
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.telemetry-hint {
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: pulse-dot 2.5s infinite;
+}
+
+/* Lusion-Style Liquid Custom Cursor */
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--gold-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s ease, opacity 0.2s ease;
+}
+
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              height 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.2s ease, 
+              background 0.2s ease;
+}
+
+body:hover .custom-cursor-dot, body:hover .custom-cursor-ring {
+  opacity: 1;
+}
+
+.custom-cursor-ring.active {
+  width: 60px;
+  height: 60px;
+  border-color: #fff;
+  background: rgba(212, 175, 55, 0.12);
+}
+
+/* Responsive Media Queries for 3D Hero */
+@media (max-width: 992px) {
+  .hero-3d-tools-dock {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .hero-model-switcher {
+    top: 90px;
+    width: 95%;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+  .hero-3d-telemetry-bar {
+    display: none;
+  }
+}

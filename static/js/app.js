@@ -1307,3 +1307,66 @@ applyFiltersAndRender = function() {
     setTimeout(window.reinitCard3DTilt, 50);
   }
 };
+
+
+// Lusion-Caliber Custom Liquid Magnetic Cursor
+(function initLiquidCursor() {
+  const cursorDot = document.querySelector('.custom-cursor-dot');
+  const cursorRing = document.querySelector('.custom-cursor-ring');
+  if (!cursorDot || !cursorRing) return;
+
+  let mX = window.innerWidth / 2;
+  let mY = window.innerHeight / 2;
+  let rX = mX;
+  let rY = mY;
+
+  window.addEventListener('mousemove', (e) => {
+    mX = e.clientX;
+    mY = e.clientY;
+    cursorDot.style.left = `${mX}px`;
+    cursorDot.style.top = `${mY}px`;
+  });
+
+  function loopCursor() {
+    rX += (mX - rX) * 0.18;
+    rY += (mY - rY) * 0.18;
+    cursorRing.style.left = `${rX}px`;
+    cursorRing.style.top = `${rY}px`;
+    requestAnimationFrame(loopCursor);
+  }
+  loopCursor();
+
+  function attachCursorHover() {
+    document.querySelectorAll('button, a, input, select, .product-card, .category-card, .btn-3d-finish, .btn-3d-model-tab').forEach(el => {
+      el.addEventListener('mouseenter', () => cursorRing.classList.add('active'));
+      el.addEventListener('mouseleave', () => cursorRing.classList.remove('active'));
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', attachCursorHover);
+  } else {
+    attachCursorHover();
+  }
+})();
+
+function order3DWatchWhatsApp() {
+  if (typeof playMechanicalTick === 'function') playMechanicalTick();
+  const cleanNumber = settings.whatsappNumber.replace(/[^0-9]/g, "");
+  const titleEl = document.getElementById('hero3DTitle');
+  const title = titleEl ? titleEl.textContent : 'Aethelgard Celestial Tourbillon';
+  const finishBtn = document.querySelector('.btn-3d-finish.active');
+  const finishName = finishBtn ? finishBtn.getAttribute('title') : '18K Champagne Gold';
+  
+  let msg = `✨ *BESPOKE 3D CONFIGURATION ORDER - ${settings.storeName.toUpperCase()}* ✨\n`;
+  msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
+  msg += `💎 *Configured 3D Piece*: *${title}*\n`;
+  msg += `🎨 *Selected Precious Finish*: *${finishName}*\n`;
+  msg += `⚙️ *Atelier Calibration*: Verified 360° Studio Specifications\n`;
+  msg += `📦 *Express Courier*: COMPLIMENTARY INSURED WORLDWIDE\n`;
+  msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
+  msg += `I inspected and customized this piece in your full-screen 3D Atelier. Please confirm availability and reserve this piece. Thank you!`;
+
+  const waUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(msg)}`;
+  window.open(waUrl, "_blank");
+}
