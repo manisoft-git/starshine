@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="/static/css/style.css" />
 </head>
 <body>
+  <!-- 3D WebGL Background Canvas (Lusion Inspired) -->
+  <canvas id="webgl-bg-canvas"></canvas>
 
   <!-- Ambient Golden Cursor Spotlight (Tracks cursor on desktop) -->
   <div class="cursor-spotlight"></div>
@@ -212,7 +214,113 @@
     </div>
   </div>
 
-  <!-- Department Showcase Section (4 Portals) -->
+  
+  <!-- ==========================================================================
+       THE 3D ATELIER SHOWROOM — LUSION-CALIBER 3D TIMEPIECE STAGE
+       ========================================================================== -->
+  <section id="atelier3d" class="stage-3d-section">
+    <div class="container stage-3d-layout">
+      
+      <!-- 3D Interactive Viewport -->
+      <div class="stage-3d-viewport-wrapper">
+        <canvas id="interactive-3d-canvas"></canvas>
+
+        <div class="stage-3d-badge-top">
+          <span class="pulse-dot"></span>
+          <span>360° Live 3D Atelier</span>
+        </div>
+
+        <!-- Material Switcher Palette -->
+        <div class="stage-3d-finishes-bar">
+          <button class="btn-3d-finish active" data-finish="gold" style="background: #d4af37;" title="18K Champagne Gold" onclick="set3DFinish('gold')"></button>
+          <button class="btn-3d-finish" data-finish="platinum" style="background: #e2e8f0;" title="Platinum & Steel" onclick="set3DFinish('platinum')"></button>
+          <button class="btn-3d-finish" data-finish="ceramic" style="background: #111217;" title="Obsidian Jet Ceramic" onclick="set3DFinish('ceramic')"></button>
+          <button class="btn-3d-finish" data-finish="rosegold" style="background: #b76e79;" title="Rose Gold Bronze" onclick="set3DFinish('rosegold')"></button>
+        </div>
+
+        <div class="stage-3d-hint-bottom">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+          </svg>
+          <span>Drag 360° to rotate • Cursor shifts dynamic studio lighting</span>
+        </div>
+      </div>
+
+      <!-- 3D Details & Architecture Controls -->
+      <div class="stage-3d-details">
+        <span class="section-pretitle">The 3D Engineering Stage</span>
+        <h2 class="stage-3d-title">Aethelgard Celestial Flying Tourbillon</h2>
+        <p class="stage-3d-desc">
+          Interact with haute horology in real-time 3D space. Inspect the exposed skeleton movement, observe the oscillating balance wheel, explore the exploded architectural assembly, and customize your precious metal casing before ordering.
+        </p>
+
+        <!-- Technical Specs -->
+        <div class="stage-3d-specs-grid">
+          <div class="spec-box">
+            <div class="spec-box-label">Movement Caliber</div>
+            <div class="spec-box-val">STR-09 Skeleton Flying Tourbillon</div>
+          </div>
+          <div class="spec-box">
+            <div class="spec-box-label">Crystal Optics</div>
+            <div class="spec-box-val">Double-Curved Scratch Sapphire</div>
+          </div>
+          <div class="spec-box">
+            <div class="spec-box-label">Case Architecture</div>
+            <div class="spec-box-val">42.0mm Mirror-Polished & Fluted</div>
+          </div>
+          <div class="spec-box">
+            <div class="spec-box-label">Pressure Resistance</div>
+            <div class="spec-box-val">50M / 5 ATM Certified</div>
+          </div>
+        </div>
+
+        <!-- 3D Architecture Tools Dock -->
+        <div class="stage-3d-dock">
+          <button id="btnExplodedView" class="btn-3d-dock" onclick="toggleExplodedView()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <polyline points="9 21 3 21 3 15"></polyline>
+              <line x1="21" y1="3" x2="14" y2="10"></line>
+              <line x1="3" y1="21" x2="10" y2="14"></line>
+            </svg>
+            <span>Explode Architecture</span>
+          </button>
+          
+          <button id="btnWireframeMode" class="btn-3d-dock" onclick="toggleWireframeMode()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            </svg>
+            <span>X-Ray Wireframe</span>
+          </button>
+
+          <button class="btn-3d-dock" onclick="reset3DView()" title="Reset Alignment">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+              <path d="M3 3v5h5"></path>
+            </svg>
+            <span>Reset</span>
+          </button>
+        </div>
+
+        <!-- Direct Actions -->
+        <div style="display: flex; gap: 14px; margin-top: 24px; flex-wrap: wrap;">
+          <button class="btn-gold" onclick="order3DWatchWhatsApp()">
+            <span>Order This 3D Configuration via WhatsApp</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+          <button class="btn-whatsapp-outline" onclick="add3DWatchToBag()">
+            Add Piece to Bag ($590)
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+<!-- Department Showcase Section (4 Portals) -->
   <section id="categories" class="container" style="padding-top: 70px;">
     <div class="section-header">
       <span class="section-pretitle">The Departments</span>
@@ -1213,6 +1321,9 @@
   </nav>
 
   <!-- JavaScript -->
+    <!-- Three.js 3D WebGL Engine -->
+  <script src="/static/js/three.min.js"></script>
+  <script src="/static/js/three-scene.js"></script>
   <script src="/static/js/app.js"></script>
 </body>
 </html>

@@ -1259,3 +1259,51 @@ function closeInvoiceModal() {
   if (modal) modal.classList.remove("open");
   document.body.style.overflow = "";
 }
+
+
+// ==========================================================================
+// 3D ATELIER SHOWROOM ACTIONS
+// ==========================================================================
+function order3DWatchWhatsApp() {
+  if (typeof playMechanicalTick === 'function') playMechanicalTick();
+  const cleanNumber = settings.whatsappNumber.replace(/[^0-9]/g, "");
+  const finishBtn = document.querySelector('.btn-3d-finish.active');
+  const finishName = finishBtn ? finishBtn.getAttribute('title') : '18K Champagne Gold';
+  
+  let msg = `✨ *BESPOKE 3D CONFIGURATION ORDER - ${settings.storeName.toUpperCase()}* ✨\n`;
+  msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
+  msg += `💎 *Configured Piece*: Aethelgard Celestial Flying Tourbillon (42mm)\n`;
+  msg += `🎨 *Custom 3D Finish*: *${finishName}*\n`;
+  msg += `⚙️ *Caliber*: STR-09 Skeleton with Exposed Oscillating Tourbillon\n`;
+  msg += `💵 *Price*: ${formatPrice(590)} (Includes Complimentary Express Delivery)\n`;
+  msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
+  msg += `I inspected this piece in your live 3D Atelier. Please confirm availability and reserve this piece. Thank you!`;
+
+  const waUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(msg)}`;
+  window.open(waUrl, "_blank");
+}
+
+function add3DWatchToBag() {
+  const watch = allProducts.find(p => p.id === 'watch-03') || {
+    id: "watch-03",
+    name: "Celestial Heritage Flying Tourbillon",
+    price: 590,
+    category: "watches",
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80"
+  };
+  const finishBtn = document.querySelector('.btn-3d-finish.active');
+  const finishName = finishBtn ? finishBtn.getAttribute('title') : '18K Champagne Gold';
+
+  addToCartItem(watch, "42mm", finishName, 1);
+  if (typeof playMechanicalTick === 'function') playMechanicalTick();
+  showToast(`Added Bespoke Tourbillon (${finishName}) to your shopping bag!`);
+}
+
+// Re-run 3D card tilt after catalog filtering
+const origApplyFiltersAndRender = applyFiltersAndRender;
+applyFiltersAndRender = function() {
+  origApplyFiltersAndRender();
+  if (window.reinitCard3DTilt) {
+    setTimeout(window.reinitCard3DTilt, 50);
+  }
+};
