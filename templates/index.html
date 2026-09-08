@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>STARSHINE ENTERPRISE | Haute Horology, Footwear & Designer Apparel</title>
-  <meta name="description" content="Discover STARSHINE ENTERPRISE. Bespoke luxury timepieces, handcrafted shoes, tailored clothing, and premium leather accessories for the modern connoisseur." />
+  <title>STARSHINE STEEZ | Haute Horology, Footwear & Designer Streetwear</title>
+  <meta name="description" content="Discover STARSHINE STEEZ. Bespoke luxury timepieces, handcrafted shoes, tailored clothing, and premium streetwear accessories for the modern connoisseur." />
   <meta name="theme-color" content="#090A0D" />
 
   <!-- Google Fonts: Cinzel & Plus Jakarta Sans -->
@@ -39,6 +39,27 @@
         <span class="ticker-sparkle">✦</span>
       </div>
       <div class="top-bar-right">
+        <!-- Multi-Atmosphere Steez Switcher (Single Word Encapsulating Each Iconic Aesthetic) -->
+        <div class="style-capsule-switcher" role="group" aria-label="Aesthetic Steez Atmosphere">
+          <span class="style-switcher-title">Steez:</span>
+          <button class="style-pill-btn active" data-style="obsidian" onclick="switchStoreStyle('obsidian')" title="Obsidian — Dark Obsidian & Champagne Gold Haute Luxury">
+            <span class="style-dot dot-obsidian"></span>
+            <span class="style-txt">Obsidian</span>
+          </button>
+          <button class="style-pill-btn" data-style="steez" onclick="switchStoreStyle('steez')" title="Steez — Bold Streetwear & Urban Hype Drip">
+            <span class="style-dot dot-steez"></span>
+            <span class="style-txt">Steez</span>
+          </button>
+          <button class="style-pill-btn" data-style="ivory" onclick="switchStoreStyle('ivory')" title="Ivory — Clean Minimalist & Warm Cashmere">
+            <span class="style-dot dot-ivory"></span>
+            <span class="style-txt">Ivory</span>
+          </button>
+          <button class="style-pill-btn" data-style="contrast" onclick="switchStoreStyle('contrast')" title="Contrast — High Contrast Stark OLED">
+            <span class="style-dot dot-contrast"></span>
+            <span class="style-txt">Contrast</span>
+          </button>
+        </div>
+
         <a id="topConciergeLink" class="concierge-link" href="javascript:void(0)" onclick="openConciergeHub()">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
@@ -88,13 +109,21 @@
       <a href="/" class="brand-logo">
         <div class="logo-main">
           <span class="logo-icon">✧</span>
-          <span class="dyn-store-name">STARSHINE ENTERPRISE</span>
+          <span class="dyn-store-name">STARSHINE STEEZ</span>
         </div>
-        <span class="logo-sub">HAUTE COLLECTION</span>
+        <span class="logo-sub">HAUTE & STREETWEAR ATELIER</span>
       </a>
 
       <!-- Header Actions -->
       <div class="header-actions">
+        <!-- Atmosphere Steez Quick Switcher Button -->
+        <button id="themeCycleBtn" class="action-btn" onclick="cycleNextStyle()" title="Toggle Atmosphere (Obsidian / Steez / Ivory / Contrast)" aria-label="Toggle Steez Atmosphere">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+        </button>
+
         <!-- Mechanical Sound Toggle -->
         <button id="audioToggleIcon" class="action-btn" onclick="toggleAudio()" title="Toggle Watch-Tick Audio Feedback" aria-label="Audio Feedback">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -536,7 +565,7 @@
     <div class="section-header">
       <span class="section-pretitle">The Global Lookbook</span>
       <h2 class="section-title">Worn By The Connoisseurs</h2>
-      <p class="section-subtitle">A glimpse into how our global clientele styles Starshine Enterprise horology, footwear, and tailored garments.</p>
+      <p class="section-subtitle">A glimpse into how our global clientele styles Starshine Steez horology, footwear, and tailored garments.</p>
     </div>
 
     <div class="lookbook-grid">
@@ -599,7 +628,7 @@
         </blockquote>
 
         <p class="story-desc">
-          Founded on an uncompromising standard for quality, <strong class="dyn-store-name">STARSHINE ENTERPRISE</strong> brings together the finest horological achievements, artisan Italian footwear, and sartorial wardrobe essentials. Every timepiece is individually tested for chronometric precision, each shoe hand-finished with burnished patinas, and each garment tailored for sovereign poise.
+          Founded on an uncompromising standard for quality, <strong class="dyn-store-name">STARSHINE STEEZ</strong> brings together the finest horological achievements, artisan Italian footwear, and sartorial wardrobe essentials. Every timepiece is individually tested for chronometric precision, each shoe hand-finished with burnished patinas, and each garment tailored for sovereign poise.
         </p>
 
         <div class="story-pillars">
@@ -739,7 +768,7 @@
       <div class="testimonial-card">
         <div class="testimonial-stars">★★★★★</div>
         <p class="testimonial-text">
-          “The Starshine Enterprise reversible belt and titanium sunglasses are now my everyday staples. Impeccable attention to detail, luxury gift boxing, and instant responses over WhatsApp.”
+          “The Starshine Steez reversible belt and titanium sunglasses are now my everyday staples. Impeccable attention to detail, luxury gift boxing, and instant responses over WhatsApp.”
         </p>
         <div class="client-meta">
           <img class="client-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80" alt="David Sterling" />
@@ -779,7 +808,7 @@
         <div class="footer-brand">
           <div class="logo-main">
             <span class="logo-icon">✧</span>
-            <span class="dyn-store-name">STARSHINE ENTERPRISE</span>
+            <span class="dyn-store-name">STARSHINE STEEZ</span>
           </div>
           <p class="footer-tagline">
             Curators of high horology, artisanal footwear, sartorial suits, and fine accessories for those who define elegance.
@@ -867,7 +896,7 @@
 
       <!-- Footer Bottom -->
       <div class="footer-bottom">
-        <div>&copy; 2026 <span class="dyn-store-name">STARSHINE ENTERPRISE</span> Haute Collection. All Rights Reserved.</div>
+        <div>&copy; 2026 <span class="dyn-store-name">STARSHINE STEEZ</span> Haute Collection. All Rights Reserved.</div>
         <div style="display: flex; gap: 20px;">
           <span>Privacy Guarantee</span>
           <span>Terms of Prestige</span>
@@ -1201,7 +1230,17 @@
 
           <div class="settings-form-group">
             <label class="settings-label" for="setStoreName">Store Name:</label>
-            <input id="setStoreName" class="settings-input" type="text" value="STARSHINE ENTERPRISE" />
+            <input id="setStoreName" class="settings-input" type="text" value="STARSHINE STEEZ" />
+          </div>
+
+          <div class="settings-form-group">
+            <label class="settings-label" for="setStoreTheme">Atmosphere Style (Steez):</label>
+            <select id="setStoreTheme" class="settings-input" style="background: var(--bg-card);">
+              <option value="obsidian" selected>✦ Obsidian — Dark Haute & Champagne Gold</option>
+              <option value="steez">⚡ Steez — Bold Streetwear & Urban Drip</option>
+              <option value="ivory">🌾 Ivory — Clean Minimalist & Cashmere</option>
+              <option value="contrast">◐ Contrast — Stark High-Contrast OLED</option>
+            </select>
           </div>
 
           <div class="settings-form-group">
@@ -1282,10 +1321,10 @@
        ========================================================================== -->
   <aside id="lusionDock" class="lusion-dock-wrapper" aria-label="Quick Actions & Atelier Control">
     <!-- Collapsed Trigger Pill -->
-    <button id="lusionDockTrigger" class="lusion-dock-pill" onclick="toggleLusionDock()" aria-expanded="false" title="Starshine Enterprise Lagos Atelier Dock">
+    <button id="lusionDockTrigger" class="lusion-dock-pill" onclick="toggleLusionDock()" aria-expanded="false" title="Starshine Steez Lagos Atelier Dock">
       <div class="dock-monogram-emblem">
         <span class="dock-sparkle">✧</span>
-        <span class="dock-initials">SE</span>
+        <span class="dock-initials">SS</span>
       </div>
       <div class="dock-pill-indicator">
         <span class="dock-status-pulse"></span>
@@ -1303,7 +1342,7 @@
       <div class="dock-panel-header">
         <div class="dock-panel-title-group">
           <span class="dock-panel-tag">LAGOS SHOWROOM & ATELIER</span>
-          <h4 class="dock-panel-title">STARSHINE ENTERPRISE</h4>
+          <h4 class="dock-panel-title">STARSHINE STEEZ</h4>
           <span class="dock-panel-sub">Victoria Island, Lagos • VIP Concierge</span>
         </div>
         <button class="dock-close-btn" onclick="toggleLusionDock()" aria-label="Collapse Dock">✕</button>
@@ -1320,11 +1359,12 @@
       </div>
 
       <div class="dock-section">
-        <span class="dock-section-title">3D STUDIO LIGHTING ATMOSPHERE</span>
+        <span class="dock-section-title">ATMOSPHERIC STEEZ (THEME)</span>
         <div class="dock-atmosphere-pills">
-          <button class="btn-dock-atmos active" data-atmos="warm" onclick="setAtmospherePreset('warm')">✨ Champagne Studio</button>
-          <button class="btn-dock-atmos" data-atmos="cyber" onclick="setAtmospherePreset('cyber')">🌑 Midnight Obsidian</button>
-          <button class="btn-dock-atmos" data-atmos="platinum" onclick="setAtmospherePreset('platinum')">❄️ Platinum Ice</button>
+          <button class="btn-dock-theme active" data-style="obsidian" onclick="switchStoreStyle('obsidian')">✦ Obsidian</button>
+          <button class="btn-dock-theme" data-style="steez" onclick="switchStoreStyle('steez')">⚡ Steez</button>
+          <button class="btn-dock-theme" data-style="ivory" onclick="switchStoreStyle('ivory')">🌾 Ivory</button>
+          <button class="btn-dock-theme" data-style="contrast" onclick="switchStoreStyle('contrast')">◐ Contrast</button>
         </div>
       </div>
 

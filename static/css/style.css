@@ -1,17 +1,22 @@
 /* ==========================================================================
-   STARSHINE HAUTE COLLECTION - DESIGN SYSTEM & LUXURY STYLESHEET
-   Dark Obsidian & Champagne Gold Luxury Theme
+   STARSHINE STEEZ — MULTI-ATMOSPHERE DESIGN SYSTEM & LUXURY STYLESHEET
+   1. Obsidian — Haute Dark Obsidian & Champagne Gold
+   2. Steez    — Bold Streetwear, Cyber Volt & Neon Hype Drip
+   3. Ivory    — Clean Minimalist & Warm Cashmere Editorial
+   4. Contrast — High-Contrast Stark OLED Monolith
    ========================================================================== */
 
-:root {
-  /* Colors */
+/* 1. OBSIDIAN (Default) */
+:root,
+[data-theme="obsidian"] {
+  --theme-id: 'obsidian';
   --bg-main: #090A0D;
   --bg-surface: #101218;
   --bg-card: #151821;
   --bg-card-hover: #1b1f2b;
-  --bg-glass: rgba(16, 18, 24, 0.82);
-  --bg-glass-card: rgba(22, 25, 35, 0.7);
-  --bg-overlay: rgba(5, 6, 8, 0.85);
+  --bg-glass: rgba(16, 18, 24, 0.85);
+  --bg-glass-card: rgba(22, 25, 35, 0.72);
+  --bg-overlay: rgba(5, 6, 8, 0.88);
 
   --border-subtle: rgba(255, 255, 255, 0.07);
   --border-gold-subtle: rgba(212, 175, 55, 0.22);
@@ -38,17 +43,118 @@
   --danger: #ef4444;
   --success: #10b981;
 
-  /* Typography */
   --font-serif: 'Cinzel', 'Playfair Display', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-  /* Transitions & Shadows */
   --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 
   --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.6);
   --shadow-card-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.8), 0 0 30px -5px rgba(212, 175, 55, 0.2);
+  color-scheme: dark;
+}
+
+/* 2. STEEZ (Bold Streetwear & Urban Hype Drip) */
+[data-theme="steez"] {
+  --theme-id: 'steez';
+  --bg-main: #07080c;
+  --bg-surface: #0e111a;
+  --bg-card: #141724;
+  --bg-card-hover: #1c2135;
+  --bg-glass: rgba(14, 17, 26, 0.9);
+  --bg-glass-card: rgba(20, 23, 36, 0.82);
+  --bg-overlay: rgba(4, 5, 8, 0.92);
+
+  --border-subtle: rgba(0, 245, 212, 0.16);
+  --border-gold-subtle: rgba(0, 245, 212, 0.32);
+  --border-gold-bright: #00f5d4;
+  --border-gold-glow: rgba(0, 245, 212, 0.6);
+
+  --gold-primary: #00f5d4;
+  --gold-light: #7df9ff;
+  --gold-dark: #00bfa5;
+  --gold-gradient: linear-gradient(135deg, #e2f952 0%, #00f5d4 50%, #ff007a 100%);
+  --gold-gradient-soft: linear-gradient(135deg, rgba(0, 245, 212, 0.2) 0%, rgba(226, 249, 82, 0.08) 100%);
+  --gold-glow: 0 0 25px rgba(0, 245, 212, 0.4);
+  --gold-glow-lg: 0 0 45px rgba(0, 245, 212, 0.65);
+
+  --text-primary: #ffffff;
+  --text-secondary: #a3b0c5;
+  --text-muted: #647087;
+  --text-gold: #00f5d4;
+
+  --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.7);
+  --shadow-card-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.9), 0 0 35px -5px rgba(0, 245, 212, 0.35);
+  color-scheme: dark;
+}
+
+/* 3. IVORY (Clean Minimalist & Warm Cashmere Aesthetic) */
+[data-theme="ivory"] {
+  --theme-id: 'ivory';
+  --bg-main: #f8f6f0;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f3efe6;
+  --bg-glass: rgba(255, 255, 255, 0.92);
+  --bg-glass-card: rgba(255, 255, 255, 0.88);
+  --bg-overlay: rgba(25, 22, 18, 0.75);
+
+  --border-subtle: rgba(175, 155, 135, 0.25);
+  --border-gold-subtle: rgba(184, 134, 48, 0.32);
+  --border-gold-bright: #a87928;
+  --border-gold-glow: rgba(168, 121, 40, 0.35);
+
+  --gold-primary: #9e7225;
+  --gold-light: #483715;
+  --gold-dark: #7a5818;
+  --gold-gradient: linear-gradient(135deg, #b88630 0%, #d4af37 50%, #8a6218 100%);
+  --gold-gradient-soft: linear-gradient(135deg, rgba(184, 134, 48, 0.15) 0%, rgba(212, 175, 55, 0.05) 100%);
+  --gold-glow: 0 4px 20px rgba(158, 114, 37, 0.22);
+  --gold-glow-lg: 0 8px 35px rgba(158, 114, 37, 0.3);
+
+  --text-primary: #181512;
+  --text-secondary: #57514a;
+  --text-muted: #877f76;
+  --text-gold: #91681f;
+
+  --shadow-card: 0 8px 25px -4px rgba(130, 110, 90, 0.12);
+  --shadow-card-hover: 0 16px 36px -6px rgba(130, 110, 90, 0.22), 0 0 20px -3px rgba(184, 134, 48, 0.2);
+  color-scheme: light;
+}
+
+/* 4. CONTRAST (High Contrast Stark OLED Drip) */
+[data-theme="contrast"] {
+  --theme-id: 'contrast';
+  --bg-main: #000000;
+  --bg-surface: #0a0a0a;
+  --bg-card: #121212;
+  --bg-card-hover: #1c1c1c;
+  --bg-glass: rgba(10, 10, 10, 0.96);
+  --bg-glass-card: rgba(18, 18, 18, 0.92);
+  --bg-overlay: rgba(0, 0, 0, 0.95);
+
+  --border-subtle: rgba(255, 255, 255, 0.28);
+  --border-gold-subtle: rgba(255, 215, 0, 0.5);
+  --border-gold-bright: #ffd700;
+  --border-gold-glow: rgba(255, 215, 0, 0.75);
+
+  --gold-primary: #ffd700;
+  --gold-light: #ffffff;
+  --gold-dark: #e6c200;
+  --gold-gradient: linear-gradient(135deg, #ffffff 0%, #ffd700 60%, #cca300 100%);
+  --gold-gradient-soft: linear-gradient(135deg, rgba(255, 215, 0, 0.25) 0%, rgba(255, 255, 255, 0.08) 100%);
+  --gold-glow: 0 0 25px rgba(255, 215, 0, 0.5);
+  --gold-glow-lg: 0 0 45px rgba(255, 215, 0, 0.75);
+
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --text-gold: #ffd700;
+
+  --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.9);
+  --shadow-card-hover: 0 20px 40px -10px rgba(255, 215, 0, 0.35);
+  color-scheme: dark;
 }
 
 /* Reset & Base */
@@ -187,6 +293,226 @@ body {
 
 .concierge-link:hover {
   color: var(--gold-primary);
+}
+
+/* ==========================================================================
+   MULTI-ATMOSPHERE (STEEZ) STYLE SWITCHER & COMPONENT ADAPTATIONS
+   ========================================================================== */
+.style-capsule-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-gold-subtle);
+  border-radius: 999px;
+  padding: 2px 4px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.style-switcher-title {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  padding: 0 4px 0 6px;
+  opacity: 0.85;
+}
+
+.style-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 3px 9px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.style-pill-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.style-pill-btn.active {
+  background: var(--gold-gradient);
+  color: #090a0d !important;
+  font-weight: 700;
+  box-shadow: var(--gold-glow);
+  border-color: transparent;
+}
+
+.style-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.dot-obsidian { background: #d4af37; box-shadow: 0 0 6px #d4af37; }
+.dot-steez    { background: #00f5d4; box-shadow: 0 0 6px #00f5d4; }
+.dot-ivory    { background: #d9caa7; box-shadow: 0 0 6px #d9caa7; }
+.dot-contrast { background: #ffffff; box-shadow: 0 0 6px #ffffff; }
+
+.style-pill-btn.active .style-dot {
+  background: #090a0d;
+  box-shadow: none;
+}
+
+/* Specific Theme Overrides: STEEZ */
+[data-theme="steez"] .brand-logo .logo-main {
+  background: linear-gradient(135deg, #ffffff 0%, #00f5d4 50%, #e2f952 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 25px rgba(0, 245, 212, 0.4);
+}
+[data-theme="steez"] .style-capsule-switcher {
+  border-color: rgba(0, 245, 212, 0.3);
+  background: rgba(0, 245, 212, 0.05);
+}
+[data-theme="steez"] .style-pill-btn.active {
+  background: linear-gradient(135deg, #00f5d4 0%, #e2f952 100%);
+  color: #08090c !important;
+  box-shadow: 0 0 15px rgba(0, 245, 212, 0.5);
+}
+[data-theme="steez"] .announcement-bar {
+  background: linear-gradient(90deg, #07090f 0%, #0d121c 50%, #07090f 100%);
+  border-bottom-color: rgba(0, 245, 212, 0.25);
+}
+[data-theme="steez"] .badge {
+  border-color: rgba(0, 245, 212, 0.4);
+  box-shadow: 0 0 10px rgba(0, 245, 212, 0.2);
+}
+[data-theme="steez"] .product-card:hover {
+  border-color: rgba(0, 245, 212, 0.45);
+}
+
+/* Specific Theme Overrides: IVORY */
+[data-theme="ivory"] .brand-logo .logo-main {
+  background: linear-gradient(135deg, #7a5818 0%, #b88630 60%, #483715 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+[data-theme="ivory"] .style-capsule-switcher {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(184, 134, 48, 0.3);
+}
+[data-theme="ivory"] .style-pill-btn {
+  color: #57514a;
+}
+[data-theme="ivory"] .style-pill-btn:hover {
+  color: #181512;
+  background: rgba(0, 0, 0, 0.06);
+}
+[data-theme="ivory"] .style-pill-btn.active {
+  background: linear-gradient(135deg, #b88630 0%, #d4af37 100%);
+  color: #ffffff !important;
+  box-shadow: 0 2px 12px rgba(184, 134, 48, 0.3);
+}
+[data-theme="ivory"] .style-pill-btn.active .style-dot {
+  background: #ffffff;
+}
+[data-theme="ivory"] .announcement-bar {
+  background: linear-gradient(90deg, #ede7dc 0%, #f7f3eb 50%, #ede7dc 100%);
+  border-bottom-color: rgba(184, 134, 48, 0.25);
+}
+[data-theme="ivory"] .ticker-text {
+  color: #4a4033;
+}
+[data-theme="ivory"] .site-header {
+  background: rgba(248, 246, 240, 0.94);
+  border-bottom-color: rgba(175, 155, 135, 0.3);
+}
+[data-theme="ivory"] .nav-link {
+  color: #57514a;
+}
+[data-theme="ivory"] .nav-link:hover,
+[data-theme="ivory"] .nav-link.active {
+  color: #9e7225;
+}
+[data-theme="ivory"] .product-card {
+  background: #ffffff;
+  border-color: rgba(175, 155, 135, 0.25);
+  box-shadow: 0 10px 30px -5px rgba(130, 110, 90, 0.1);
+}
+[data-theme="ivory"] .product-info {
+  background: #ffffff;
+}
+[data-theme="ivory"] .category-card {
+  background: #ffffff;
+  border-color: rgba(175, 155, 135, 0.25);
+}
+[data-theme="ivory"] .filter-btn {
+  background: rgba(0, 0, 0, 0.04);
+  color: #57514a;
+  border-color: rgba(175, 155, 135, 0.25);
+}
+[data-theme="ivory"] .filter-btn.active {
+  background: #9e7225;
+  color: #ffffff;
+}
+[data-theme="ivory"] .modal-container,
+[data-theme="ivory"] .cart-drawer,
+[data-theme="ivory"] .lusion-dock-panel {
+  background: #ffffff;
+  color: #181512;
+  border-color: rgba(175, 155, 135, 0.35);
+}
+[data-theme="ivory"] .lusion-dock-pill {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(175, 155, 135, 0.35);
+  color: #181512;
+}
+[data-theme="ivory"] .currency-select {
+  border-color: rgba(175, 155, 135, 0.35);
+  color: #181512;
+}
+[data-theme="ivory"] .settings-input,
+[data-theme="ivory"] .cart-notes-input {
+  background: #f4efe6;
+  border-color: rgba(175, 155, 135, 0.4);
+  color: #181512;
+}
+[data-theme="ivory"] .footer-section {
+  background: #eee8de;
+  border-top-color: rgba(175, 155, 135, 0.35);
+}
+[data-theme="ivory"] .mobile-bottom-bar {
+  background: rgba(248, 246, 240, 0.94);
+  border-top-color: rgba(175, 155, 135, 0.35);
+}
+
+/* Specific Theme Overrides: CONTRAST */
+[data-theme="contrast"] .brand-logo .logo-main {
+  background: linear-gradient(135deg, #ffffff 0%, #ffd700 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+[data-theme="contrast"] .style-capsule-switcher {
+  border-color: rgba(255, 215, 0, 0.5);
+  background: #0a0a0a;
+}
+[data-theme="contrast"] .style-pill-btn.active {
+  background: #ffd700;
+  color: #000000 !important;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+}
+[data-theme="contrast"] .product-card {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+[data-theme="contrast"] .product-card:hover {
+  border-color: #ffd700;
 }
 
 /* ==========================================================================

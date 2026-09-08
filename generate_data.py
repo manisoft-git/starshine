@@ -155,7 +155,7 @@ products = [
     "isBestSeller": True,
     "image": "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=900&q=80",
     "secondaryImage": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=900&q=80",
-    "description": "Sleek low-profile court sneaker sculpted from buttery soft Nappa leather with padded collar, gold foil Starshine Enterprise emblem, and Italian Margom rubber sole.",
+    "description": "Sleek low-profile court sneaker sculpted from buttery soft Nappa leather with padded collar, gold foil Starshine Steez emblem, and Italian Margom rubber sole.",
     "features": ["Full-Grain Butter Nappa", "Margom Vulcanized Cupsole", "Gold-Embossed Monogram", "Waxed Cotton Laces"],
     "colors": [
       {"name": "Triple Pure White", "hex": "#F8F9FA"},
@@ -282,7 +282,7 @@ products = [
   },
   {
     "id": "acc-01",
-    "name": "Starshine Enterprise 24K Monogram Reversible Belt",
+    "name": "Starshine Steez 24K Monogram Reversible Belt",
     "category": "accessories",
     "categoryName": "Accessories & Fine Goods",
     "price": 120,
@@ -294,7 +294,7 @@ products = [
     "isBestSeller": True,
     "image": "https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=900&q=80",
     "secondaryImage": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=80",
-    "description": "Dual-sided premium full-grain saddle leather with 24K gold-plated rotating Starshine Enterprise emblem buckle. Flawlessly transitions between formal black and casual cognac.",
+    "description": "Dual-sided premium full-grain saddle leather with 24K gold-plated rotating Starshine Steez emblem buckle. Flawlessly transitions between formal black and casual cognac.",
     "features": ["100% Full-Grain Saddle Hide", "24K Gold-Plated Swivel Buckle", "Reversible Black & Saddle Tan", "Velvet Gift Box & Authenticity Card"],
     "colors": [
       {"name": "Noir & Cognac Dual", "hex": "#301B0E"}
@@ -363,7 +363,7 @@ products = [
     "image": "https://images.unsplash.com/photo-1590548784585-643d2b9f2925?auto=format&fit=crop&w=900&q=80",
     "secondaryImage": "https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=900&q=80",
     "description": "Hand-set faceted natural Brazilian black onyx in solid 925 sterling silver with tarnish-resistant rhodium finish and swivel toggle backs.",
-    "features": ["Solid 925 Sterling Silver", "Natural Brazilian Black Onyx", "Anti-Tarnish Rhodium Finish", "Engraved Starshine Enterprise Hallmark"],
+    "features": ["Solid 925 Sterling Silver", "Natural Brazilian Black Onyx", "Anti-Tarnish Rhodium Finish", "Engraved Starshine Steez Hallmark"],
     "colors": [
       {"name": "Silver & Onyx", "hex": "#E0E0E0"},
       {"name": "Gold & Onyx", "hex": "#D4AF37"}

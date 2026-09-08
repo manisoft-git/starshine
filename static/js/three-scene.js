@@ -1,5 +1,5 @@
 /**
- * STARSHINE ENTERPRISE — HIGH-CLASS 3D WEBGL SUITE & SCROLL PHYSICS
+ * STARSHINE STEEZ — HIGH-CLASS 3D WEBGL SUITE & SCROLL PHYSICS
  * Inspired by https://lusion.co/
  * 
  * Features:
@@ -10,6 +10,7 @@
  *    3. Jewelry: 18K Solid Gold Cuban Link & Sovereign Signet Ring Set (Onyx, Diamonds)
  *    4. Bespoke Suiting: Imperial Senator Wool & Italian Double-Breasted Blazer
  * - Real-Time Precious Metal Finishes (Champagne Gold, Platinum Steel, Obsidian Ceramic, Rose Gold)
+ * - Multi-Atmosphere Aesthetic Engine (Obsidian, Steez, Ivory, Contrast)
  * - Scroll-Driven 3D Card Perspective Tilt Physics
  * - Lusion Expandable / Collapsible Monogram Floating Dock
  */
@@ -317,11 +318,11 @@
     dCtx.fillText("VI", cx, cy + 380);
     dCtx.fillText("IX", cx - 380, cy);
 
-    // Starshine Enterprise Hallmark at top
+    // Starshine Steez Hallmark at top
     dCtx.font = "700 22px Cinzel, serif";
     dCtx.fillStyle = "#d4af37";
     dCtx.letterSpacing = "4px";
-    dCtx.fillText("STARSHINE ENTERPRISE", cx, cy - 160);
+    dCtx.fillText("STARSHINE STEEZ", cx, cy - 160);
     dCtx.font = "500 16px Plus Jakarta Sans, sans-serif";
     dCtx.fillStyle = "rgba(255, 255, 255, 0.5)";
     dCtx.fillText("CHRONOMÈTRE OFFICIEL • 50M", cx, cy - 130);
@@ -573,7 +574,7 @@
   onyxMesh.position.y = 2.45;
   jewelryModel.add(onyxMesh);
 
-  // Gold Starshine Enterprise Star Hallmark Crest on Onyx
+  // Gold Starshine Steez Star Hallmark Crest on Onyx
   const starGeo = new THREE.OctahedronGeometry(0.4, 0);
   const starMesh = new THREE.Mesh(starGeo, FINISH_MATERIALS.gold.accent);
   starMesh.position.y = 2.58;
@@ -785,7 +786,7 @@
 
     const formattedPrice = window.formatPrice ? window.formatPrice(priceUsd) : `$${priceUsd}`;
     const cleanNumber = (window.settings && window.settings.whatsappNumber) ? window.settings.whatsappNumber.replace(/[^0-9]/g, "") : "2348012345678";
-    const store = (window.settings && window.settings.storeName) ? window.settings.storeName : "STARSHINE ENTERPRISE";
+    const store = (window.settings && window.settings.storeName) ? window.settings.storeName : "STARSHINE STEEZ";
 
     const msg = `✨ *INQUIRY / 3D ORDER - ${store}* ✨\n` +
       `━━━━━━━━━━━━━━━━━━━━━\n` +
@@ -1082,33 +1083,52 @@
     }
   };
 
-  window.setAtmospherePreset = function(preset) {
-    document.querySelectorAll(".btn-dock-atmos").forEach(btn => {
-      btn.classList.toggle("active", btn.getAttribute("data-atmos") === preset);
-    });
+  window.setStoreAestheticTheme = function(themeName) {
+    if (!themeName) themeName = "obsidian";
 
-    if (preset === "warm") {
+    if (themeName === "obsidian") {
       heroKey.color.setHex(0xfff7e6);
       heroFill.color.setHex(0xd4af37);
-      document.documentElement.style.setProperty("--gold-primary", "#d4af37");
-      if (window.showToast) window.showToast("✦ Atmosphere: Champagne Studio Warmth");
-    } else if (preset === "cyber") {
-      heroKey.color.setHex(0x10b981);
-      heroFill.color.setHex(0x6366f1);
-      document.documentElement.style.setProperty("--gold-primary", "#10b981");
-      if (window.showToast) window.showToast("✦ Atmosphere: Midnight Cyber Obsidian");
-    } else if (preset === "platinum") {
+      if (bgDirLight) bgDirLight.color.setHex(0xd4af37);
+      if (ringMat) ringMat.color.setHex(0xd4af37);
+    } else if (themeName === "steez") {
+      heroKey.color.setHex(0x00f5d4);
+      heroFill.color.setHex(0xff007a);
+      if (bgDirLight) bgDirLight.color.setHex(0x00f5d4);
+      if (ringMat) ringMat.color.setHex(0x00f5d4);
+    } else if (themeName === "ivory") {
+      heroKey.color.setHex(0xfff8ee);
+      heroFill.color.setHex(0xb88630);
+      if (bgDirLight) bgDirLight.color.setHex(0xc5a880);
+      if (ringMat) ringMat.color.setHex(0xa67c2e);
+    } else if (themeName === "contrast") {
       heroKey.color.setHex(0xffffff);
-      heroFill.color.setHex(0x38bdf8);
-      document.documentElement.style.setProperty("--gold-primary", "#e2e8f0");
-      if (window.showToast) window.showToast("✦ Atmosphere: Platinum Ice");
+      heroFill.color.setHex(0xffd700);
+      if (bgDirLight) bgDirLight.color.setHex(0xffd700);
+      if (ringMat) ringMat.color.setHex(0xffd700);
     }
-    if (window.playMechanicalTick) window.playMechanicalTick();
+
+    // Sync dock atmosphere buttons if present
+    document.querySelectorAll(".btn-dock-theme, .btn-dock-atmos").forEach(btn => {
+      const bTheme = btn.getAttribute("data-style") || btn.getAttribute("data-theme") || btn.getAttribute("data-atmos");
+      btn.classList.toggle("active", bTheme === themeName);
+    });
+  };
+
+  // Backwards compatibility for dock atmosphere preset buttons
+  window.setAtmospherePreset = function(preset) {
+    const map = { warm: "obsidian", cyber: "steez", platinum: "contrast" };
+    const theme = map[preset] || preset;
+    if (window.switchStoreStyle) {
+      window.switchStoreStyle(theme, true);
+    } else {
+      window.setStoreAestheticTheme(theme);
+    }
   };
 
   window.openWhatsAppChat = function() {
     const cleanNumber = (window.settings && window.settings.whatsappNumber) ? window.settings.whatsappNumber.replace(/[^0-9]/g, "") : "2348012345678";
-    const store = (window.settings && window.settings.storeName) ? window.settings.storeName : "STARSHINE ENTERPRISE";
+    const store = (window.settings && window.settings.storeName) ? window.settings.storeName : "STARSHINE STEEZ";
     const msg = encodeURIComponent(`Hello ${store} Concierge! I am browsing your luxury collection and would like assistance with an order.`);
     window.open(`https://wa.me/${cleanNumber}?text=${msg}`, "_blank");
   };

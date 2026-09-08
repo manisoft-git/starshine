@@ -1,17 +1,19 @@
 /**
- * STARSHINE HAUTE COLLECTION - CLIENT APPLICATION
- * Features: Product Filtering, Currency Switching, Cart Management,
- * Wishlist, Quick View Modal, WhatsApp Order Engine & Owner Settings.
+ * STARSHINE STEEZ HAUTE & STREETWEAR COLLECTION - CLIENT APPLICATION
+ * Features: Multi-Atmosphere Steez Engine (Obsidian, Steez, Ivory, Contrast),
+ * Product Filtering, Currency Switching, Cart Management, Wishlist,
+ * Quick View Modal, WhatsApp Order Engine & Owner Settings.
  */
 
 // Default Configurations
 const DEFAULT_SETTINGS = {
-  storeName: "STARSHINE ENTERPRISE",
+  storeName: "STARSHINE STEEZ",
   whatsappNumber: "2348012345678", // Uncle's WhatsApp Phone Number (Digits only with Nigeria country code)
   displayPhone: "+234 (0) 801 234 5678",
   storeLocation: "Victoria Island, Lagos, Nigeria",
-  email: "concierge@starshine-enterprise.com",
+  email: "concierge@starshinesteez.com",
   currency: "NGN", // NAIRA IS DEFAULT!
+  theme: "obsidian", // Default atmosphere
   freeShippingThreshold: 250000 // In Naira
 };
 
@@ -24,6 +26,59 @@ const CURRENCIES = {
   AED: { symbol: " AED", rate: 3.67, format: "suffix", label: "AED (د.إ)" },
   CAD: { symbol: "C$", rate: 1.36, format: "prefix", label: "CAD (C$)" }
 };
+
+// Atmospheric Style Engine (One word encapsulates each iconic aesthetic)
+const VALID_STYLES = ["obsidian", "steez", "ivory", "contrast"];
+let currentStyle = localStorage.getItem("starshine_steez_theme") || "obsidian";
+
+function switchStoreStyle(styleName, notify = true) {
+  if (!VALID_STYLES.includes(styleName)) styleName = "obsidian";
+  currentStyle = styleName;
+  document.documentElement.setAttribute("data-theme", styleName);
+  localStorage.setItem("starshine_steez_theme", styleName);
+  if (typeof settings !== "undefined") {
+    settings.theme = styleName;
+    localStorage.setItem("starshine_settings", JSON.stringify(settings));
+  }
+
+  // Synchronize all segmented style pill buttons across the page
+  document.querySelectorAll(".style-pill-btn, .btn-dock-theme").forEach(btn => {
+    const bStyle = btn.getAttribute("data-style") || btn.getAttribute("data-theme");
+    btn.classList.toggle("active", bStyle === styleName);
+  });
+
+  // Sync settings dropdown if open
+  const setStoreTheme = document.getElementById("setStoreTheme");
+  if (setStoreTheme) setStoreTheme.value = styleName;
+
+  // Sync 3D WebGL Scene lighting and particle shaders
+  if (window.setStoreAestheticTheme) {
+    window.setStoreAestheticTheme(styleName);
+  }
+
+  // Audio tactile feedback
+  if (typeof playMechanicalTick === "function") {
+    playMechanicalTick();
+  }
+
+  if (notify && typeof showToast === "function") {
+    const names = {
+      obsidian: "Obsidian — Haute Dark & Champagne Gold",
+      steez: "Steez — Bold Streetwear & Urban Drip",
+      ivory: "Ivory — Clean Minimalist & Cashmere Warmth",
+      contrast: "Contrast — Stark High-Contrast OLED"
+    };
+    showToast(`✨ Atmosphere: ${names[styleName] || styleName.toUpperCase()}`);
+  }
+}
+window.switchStoreStyle = switchStoreStyle;
+
+function cycleNextStyle() {
+  const currentIndex = VALID_STYLES.indexOf(currentStyle);
+  const nextStyle = VALID_STYLES[(currentIndex + 1) % VALID_STYLES.length];
+  switchStoreStyle(nextStyle, true);
+}
+window.cycleNextStyle = cycleNextStyle;
 
 // Global State
 let allProducts = [];
@@ -38,11 +93,14 @@ let settings = JSON.parse(localStorage.getItem("starshine_settings") || JSON.str
 if (!settings.currency || settings.currency === "USD") {
   settings.currency = "NGN";
 }
-if (settings.storeName === "STARSHINE") {
-  settings.storeName = "STARSHINE ENTERPRISE";
+if (settings.storeName === "STARSHINE" || settings.storeName === "STARSHINE ENTERPRISE") {
+  settings.storeName = "STARSHINE STEEZ";
 }
 if (!settings.storeLocation) {
   settings.storeLocation = "Victoria Island, Lagos, Nigeria";
+}
+if (!settings.theme) {
+  settings.theme = currentStyle;
 }
 localStorage.setItem("starshine_settings", JSON.stringify(settings));
 let appliedPromo = null; // { code: 'STAR10', discountPercent: 10 }
@@ -67,8 +125,11 @@ function initSettings() {
   
   const currencySelect = document.getElementById("currencySelect");
   if (currencySelect) {
-    currencySelect.value = settings.currency || "USD";
+    currencySelect.value = settings.currency || "NGN";
   }
+
+  // Initialize atmospheric style (Obsidian, Steez, Ivory, Contrast)
+  switchStoreStyle(currentStyle, false);
 
   // Update floating WhatsApp link
   updateWhatsAppLinks();
@@ -635,7 +696,9 @@ function openSettingsModal() {
   document.getElementById("setWhatsappNumber").value = settings.whatsappNumber;
   document.getElementById("setDisplayPhone").value = settings.displayPhone;
   document.getElementById("setStoreName").value = settings.storeName;
-  document.getElementById("setCurrency").value = settings.currency || "USD";
+  document.getElementById("setCurrency").value = settings.currency || "NGN";
+  const themeSelect = document.getElementById("setStoreTheme");
+  if (themeSelect) themeSelect.value = settings.theme || currentStyle || "obsidian";
 
   modal.classList.add("open");
   document.body.style.overflow = "hidden";
@@ -653,6 +716,12 @@ function saveStoreSettings(e) {
   settings.displayPhone = document.getElementById("setDisplayPhone").value.trim() || DEFAULT_SETTINGS.displayPhone;
   settings.storeName = document.getElementById("setStoreName").value.trim() || DEFAULT_SETTINGS.storeName;
   settings.currency = document.getElementById("setCurrency").value;
+
+  const themeSelect = document.getElementById("setStoreTheme");
+  if (themeSelect) {
+    settings.theme = themeSelect.value;
+    switchStoreStyle(themeSelect.value, false);
+  }
 
   localStorage.setItem("starshine_settings", JSON.stringify(settings));
   initSettings();
@@ -721,7 +790,7 @@ function initEventListeners() {
       e.preventDefault();
       const email = document.getElementById("newsletterEmail").value;
       if (email) {
-        showToast("✨ Welcome to Starshine Enterprise Privé! Use code STAR10 for 10% off.");
+        showToast("✨ Welcome to Starshine Steez Privé! Use code STAR10 for 10% off.");
         document.getElementById("newsletterEmail").value = "";
       }
     });
@@ -889,7 +958,7 @@ const CAPSULES = [
       { id: "watch-01", name: "Aethelgard Royal Skeleton Automatic Gold", price: 440 },
       { id: "clothes-03", name: "Super 150s Double-Breasted Italian Wool Tuxedo", price: 285 },
       { id: "shoes-01", name: "Milano Handcrafted Patina Double Monk Shoes", price: 245 },
-      { id: "acc-01", name: "Starshine Enterprise 24K Monogram Reversible Belt", price: 120 }
+      { id: "acc-01", name: "Starshine Steez 24K Monogram Reversible Belt", price: 120 }
     ],
     originalTotal: 1090,
     bundlePrice: 925
@@ -1243,7 +1312,7 @@ function openInvoiceModal() {
       </div>
 
       <div style="margin-top: 24px; padding-top: 14px; border-top: 1px dashed var(--border-subtle); font-size: 0.74rem; color: var(--text-muted); text-align: center;">
-        ✦ Official Starshine Enterprise Certificate of Authenticity & Hand-Inspection Guaranteed ✦
+        ✦ Official Starshine Steez Certificate of Authenticity & Hand-Inspection Guaranteed ✦
       </div>
     </div>
 

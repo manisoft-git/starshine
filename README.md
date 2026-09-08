@@ -1,4 +1,4 @@
-# 🌟 STARSHINE ENTERPRISE — Haute Horology, Footwear & Designer Apparel
+# 🌟 STARSHINE STEEZ — Haute Horology, Footwear & Designer Apparel
 
 A luxury e-commerce web platform designed for high-end retail, featuring **Watches, Shoes, Clothing, and Accessories**.
 
@@ -23,7 +23,7 @@ Engineered with a **Dark Obsidian & Champagne Gold** aesthetic, editorial serif 
    - Customers add products (selecting custom sizes, colors, and quantities).
    - In the slide-over bag, clicking **"Complete Order On WhatsApp"** generates a pre-formatted message sent directly to your uncle:
      ```text
-     ✨ *NEW ORDER - STARSHINE ENTERPRISE* ✨
+     ✨ *NEW ORDER - STARSHINE STEEZ* ✨
      ━━━━━━━━━━━━━━━━━━━━━
      🛍️ *ORDERED LUXURY PIECES*:
 
