@@ -2783,15 +2783,63 @@ body {
   }
 }
 
+/* Disable synthetic mouse cursors and spotlight on touchscreens / mobile */
+@media (hover: none), (max-width: 992px) {
+  .custom-cursor-dot,
+  .custom-cursor-ring,
+  .cursor-spotlight {
+    display: none !important;
+  }
+  * {
+    cursor: auto !important;
+  }
+  a, button, select, input, .product-card, .style-pill-btn {
+    cursor: pointer !important;
+  }
+}
+
 @media (max-width: 768px) {
+  .announcement-bar {
+    padding: 6px 0;
+  }
   .announcement-content {
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
     text-align: center;
+  }
+  .ticker-text {
+    font-size: 0.72rem;
+    line-height: 1.3;
+  }
+  .top-bar-right {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+  .style-capsule-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+  }
+  .style-pill-btn {
+    padding: 3px 8px;
+    font-size: 0.72rem;
+  }
+  .currency-select {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+  .concierge-link {
+    font-size: 0.75rem;
+    padding: 3px 8px;
   }
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 14px;
   }
   .category-grid {
     grid-template-columns: 1fr;
@@ -2799,9 +2847,11 @@ body {
   .catalog-controls {
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
   }
   .catalog-right-controls {
     flex-direction: column;
+    width: 100%;
   }
   .search-input-wrapper {
     width: 100%;
@@ -2811,32 +2861,50 @@ body {
   }
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
   .mobile-bottom-bar {
     display: flex;
+    padding-bottom: max(6px, env(safe-area-inset-bottom));
   }
   .floating-whatsapp {
     bottom: 84px;
-    right: 20px;
+    right: 16px;
   }
   .toast-container {
     bottom: 84px;
-    left: 20px;
-    right: 20px;
+    left: 16px;
+    right: 16px;
+  }
+  .modal-dialog, .quickview-modal-content, .cart-drawer {
+    max-height: 90vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
 @media (max-width: 480px) {
   .products-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
   .hero-buttons {
     flex-direction: column;
     width: 100%;
+    gap: 10px;
   }
   .btn-gold, .btn-whatsapp-outline {
     width: 100%;
     justify-content: center;
+  }
+  .product-card {
+    border-radius: 12px;
+  }
+  .section-title {
+    font-size: 1.6rem;
+  }
+  .hero-title {
+    font-size: clamp(2rem, 9vw, 3rem);
   }
 }
 
