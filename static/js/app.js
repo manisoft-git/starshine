@@ -8,10 +8,10 @@
 // Default Configurations
 const DEFAULT_SETTINGS = {
   storeName: "STARSHINE STEEZ",
-  whatsappNumber: "2348012345678", // Uncle's WhatsApp Phone Number (Digits only with Nigeria country code)
-  displayPhone: "+234 (0) 801 234 5678",
+  whatsappNumber: "2348091977795", // WhatsApp Phone Number (Manifest Subeno)
+  displayPhone: "+234 (0) 809 197 7795",
   storeLocation: "Victoria Island, Lagos, Nigeria",
-  email: "concierge@starshinesteez.com",
+  email: "tobi585olive@gmail.com",
   currency: "NGN", // NAIRA IS DEFAULT!
   theme: "obsidian", // Default atmosphere
   freeShippingThreshold: 250000 // In Naira
@@ -1344,24 +1344,6 @@ function closeInvoiceModal() {
 // ==========================================================================
 // 3D ATELIER SHOWROOM ACTIONS
 // ==========================================================================
-function order3DWatchWhatsApp() {
-  if (typeof playMechanicalTick === 'function') playMechanicalTick();
-  const cleanNumber = settings.whatsappNumber.replace(/[^0-9]/g, "");
-  const finishBtn = document.querySelector('.btn-3d-finish.active');
-  const finishName = finishBtn ? finishBtn.getAttribute('title') : '18K Champagne Gold';
-  
-  let msg = `✨ *BESPOKE 3D CONFIGURATION ORDER - ${settings.storeName.toUpperCase()}* ✨\n`;
-  msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
-  msg += `💎 *Configured Piece*: Aethelgard Celestial Flying Tourbillon (42mm)\n`;
-  msg += `🎨 *Custom 3D Finish*: *${finishName}*\n`;
-  msg += `⚙️ *Caliber*: STR-09 Skeleton with Exposed Oscillating Tourbillon\n`;
-  msg += `💵 *Price*: ${formatPrice(590)} (Includes Complimentary Express Delivery)\n`;
-  msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
-  msg += `I inspected this piece in your live 3D Atelier. Please confirm availability and reserve this piece. Thank you!`;
-
-  const waUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(msg)}`;
-  window.open(waUrl, "_blank");
-}
 
 function add3DWatchToBag() {
   const watch = allProducts.find(p => p.id === 'watch-03') || {

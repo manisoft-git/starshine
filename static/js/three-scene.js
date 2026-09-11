@@ -785,7 +785,7 @@
     const finish = FINISH_MATERIALS[currentFinish].name;
 
     const formattedPrice = window.formatPrice ? window.formatPrice(priceUsd) : `$${priceUsd}`;
-    const cleanNumber = (window.settings && window.settings.whatsappNumber) ? window.settings.whatsappNumber.replace(/[^0-9]/g, "") : "2348012345678";
+    const cleanNumber = (window.settings && window.settings.whatsappNumber) ? window.settings.whatsappNumber.replace(/[^0-9]/g, "") : "2348091977795";
     const store = (window.settings && window.settings.storeName) ? window.settings.storeName : "STARSHINE STEEZ";
 
     const msg = `✨ *INQUIRY / 3D ORDER - ${store}* ✨\n` +
@@ -1127,7 +1127,7 @@
   };
 
   window.openWhatsAppChat = function() {
-    const cleanNumber = (window.settings && window.settings.whatsappNumber) ? window.settings.whatsappNumber.replace(/[^0-9]/g, "") : "2348012345678";
+    const cleanNumber = (window.settings && window.settings.whatsappNumber) ? window.settings.whatsappNumber.replace(/[^0-9]/g, "") : "2348091977795";
     const store = (window.settings && window.settings.storeName) ? window.settings.storeName : "STARSHINE STEEZ";
     const msg = encodeURIComponent(`Hello ${store} Concierge! I am browsing your luxury collection and would like assistance with an order.`);
     window.open(`https://wa.me/${cleanNumber}?text=${msg}`, "_blank");

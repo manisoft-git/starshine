@@ -48,7 +48,7 @@ def get_product(product_id):
 @app.route('/api/whatsapp-link', methods=['POST'])
 def generate_whatsapp_link():
     data = request.get_json() or {}
-    phone = data.get('phone', '15550192834').replace('+', '').replace(' ', '').replace('-', '')
+    phone = data.get('phone', '2348091977795').replace('+', '').replace(' ', '').replace('-', '')
     items = data.get('items', [])
     store_name = data.get('store_name', 'STARSHINE STEEZ')
     notes = data.get('notes', '')
