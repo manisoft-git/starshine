@@ -87,6 +87,41 @@ def generate_whatsapp_link():
 def health():
     return jsonify({"status": "healthy", "store": "STARSHINE STEEZ HAUTE COLLECTION", "version": "1.0.0"})
 
+# ============================================================================
+# 24/7 FLEET KEEP-ALIVE ANTI-SLEEP WORKER
+# Automatically pings all ManiSoft cloud services on Render every 9 minutes
+# ============================================================================
+import threading
+import time
+import urllib.request
+
+def _start_fleet_keep_alive():
+    fleet_urls = [
+        "https://manisoft-passmaster-ai.onrender.com",
+        "https://manisoft-lumina.onrender.com",
+        "https://manisoft-panel.onrender.com",
+        "https://manisoft-starshine.onrender.com",
+        "https://manisoft-strike-ops.onrender.com",
+        "https://manisoft-subway-surfers.onrender.com",
+        "https://manisoft-aether-transport.onrender.com"
+    ]
+    def loop():
+        time.sleep(25)
+        while True:
+            for u in fleet_urls:
+                try:
+                    req = urllib.request.Request(u, headers={"User-Agent": "ManiSoft-Starshine-KeepAlive/2.0"})
+                    with urllib.request.urlopen(req, timeout=15) as r:
+                        r.read(100)
+                except Exception:
+                    pass
+            time.sleep(540) # 9 minutes (well under Render 15-min sleep limit)
+
+    t = threading.Thread(target=loop, daemon=True, name="StarshineKeepAliveWorker")
+    t.start()
+
+_start_fleet_keep_alive()
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     print(f"🌟 STARSHINE STEEZ Haute Collection online on http://0.0.0.0:{port}")
